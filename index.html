@@ -1,520 +1,803 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Truyền Thông Quốc Tế Mẫu</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <style>
-        /* Thiết lập font Inter */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7fafc; /* Màu nền nhẹ nhàng */
-        }
-        /* Style tùy chỉnh cho hiệu ứng Parallax */
-        #hero-section {
-            /* Hình ảnh nền chuyên nghiệp, mang tính quốc tế */
-            background-image: url('https://images.unsplash.com/photo-1543269865-c3359d9c8efb?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920&h=1080&blend=6366f1&blend-mode=multiply&sat=-20&bri=-30');
-            background-size: cover;
-            background-position: center;
-            height: 100vh; /* Chiều cao đầy đủ cho phần đầu trang */
-            position: relative;
-            overflow: hidden;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Truyền Thông Quốc Tế</title>
+    <!-- Tải Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Tải biểu tượng Lucide Icons --><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* Thiết lập font Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc; /* Màu nền nhẹ nhàng */
+        }
+        /* Style tùy chỉnh cho hiệu ứng Parallax */
+        #hero-section {
+            /* Hình ảnh nền chuyên nghiệp, mang tính quốc tế */
+            background-image: url('https://images.unsplash.com/photo-1543269865-c3359d9c8efb?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920&h=1080&blend=6366f1&blend-mode=multiply&sat=-20&bri=-30');
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Chiều cao đầy đủ cho phần đầu trang */
+            position: relative;
+            overflow: hidden;
+        }
 
-        /* Lớp phủ để làm nổi bật văn bản */
-        #hero-overlay {
-            /* Lớp phủ màu Indigo đậm hơn, tăng tính chuyên nghiệp */
-            background-color: rgba(0, 0, 0, 0.65);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        /* Lớp phủ để làm nổi bật văn bản */
+        #hero-overlay {
+            /* Lớp phủ màu Indigo đậm hơn, tăng tính chuyên nghiệp */
+            background-color: rgba(0, 0, 0, 0.65);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-        /* Container cho nội dung chính */
-        .content-section {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-            background-color: white;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border-radius: 1.5rem;
-            margin: 2rem auto;
-            max-width: 1280px;
-        }
+        /* Container cho nội dung chính */
+        .content-section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 1.5rem;
+            margin: 2rem auto;
+            max-width: 1280px;
+        }
 
-        /* Hiệu ứng mượt mà cho các phần tử */
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            /* Màu sắc hover theo tông Indigo */
-            box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
-        }
+        /* Hiệu ứng mượt mà cho các phần tử */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            /* Màu sắc hover theo tông Indigo */
+            box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
+        }
 
-        /* Nút cuộn lên đầu */
-        #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: none; /* Ban đầu ẩn */
-        }
+        /* Nút cuộn lên đầu */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none; /* Ban đầu ẩn */
+        }
 
-        /* ------------------------------------------- */
-        /* Custom style cho Image Carousel (Slider) */
-        /* ------------------------------------------- */
-        .image-carousel-container {
-            position: relative;
-            max-width: 600px; /* Chiều rộng tối đa cho carousel (có thể điều chỉnh) */
-            margin: 1.5rem auto; /* Căn giữa */
-            border-radius: 0.75rem;
-            overflow: hidden;
-            background-color: #eef2ff; /* indigo-50 */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            height: 360px; /* Chiều cao tổng: 300px ảnh + 60px caption */
-        }
-        
-        /* Container chứa tất cả các slide - dùng để positioning */
-        .carousel-slides {
-            position: relative;
-            width: 100%;
-            height: 300px;
-        }
+        /* ------------------------------------------- */
+        /* Custom style cho Image Carousel (Slider) */
+        /* ------------------------------------------- */
+        .image-carousel-container {
+            position: relative;
+            max-width: 600px; /* Chiều rộng tối đa cho carousel (có thể điều chỉnh) */
+            margin: 1.5rem auto; /* Căn giữa */
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background-color: #eef2ff; /* indigo-50 */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            height: 360px; /* Chiều cao tổng: 300px ảnh + 60px caption */
+        }
+        
+        /* Container chứa tất cả các slide - dùng để positioning */
+        .carousel-slides {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
 
-        .carousel-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out; /* Hiệu ứng mờ dần */
-        }
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Hiệu ứng mờ dần */
+        }
 
-        .carousel-slide.active {
-            opacity: 1; /* Slide đang active sẽ hiển thị */
-            z-index: 5;
-        }
+        .carousel-slide.active {
+            opacity: 1; /* Slide đang active sẽ hiển thị */
+            z-index: 5;
+        }
 
-        .carousel-image-wrapper {
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
-        }
+        .carousel-image-wrapper {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
 
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background-color: #4f46e5; /* indigo-600 */
-            color: white;
-            font-size: 1rem;
-            font-weight: 500;
-            text-align: center;
-            z-index: 10; /* Đảm bảo caption nằm trên ảnh */
-            transition: opacity 0.5s ease-in-out;
-        }
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            z-index: 10; /* Đảm bảo caption nằm trên ảnh */
+            transition: opacity 0.5s ease-in-out;
+        }
 
-        .carousel-nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(calc(-50% - 30px)); /* Điều chỉnh để nằm giữa ảnh, -30px là 1 nửa chiều cao caption */
-            background-color: rgba(255, 255, 255, 0.9);
-            border: none;
-            cursor: pointer;
-            padding: 0.75rem;
-            border-radius: 50%;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-            z-index: 15;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+        .carousel-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(calc(-50% - 30px)); /* Điều chỉnh để nằm giữa ảnh, -30px là 1 nửa chiều cao caption */
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            cursor: pointer;
+            padding: 0.75rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            z-index: 15;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
 
-        .carousel-nav-button:hover {
-            background-color: #6366f1; /* indigo-500 */
-            color: white;
-            transform: translateY(calc(-50% - 30px)) scale(1.05);
-        }
+        .carousel-nav-button:hover {
+            background-color: #6366f1; /* indigo-500 */
+            color: white;
+            transform: translateY(calc(-50% - 30px)) scale(1.05);
+        }
 
-        .carousel-nav-button.prev {
-            left: 10px;
-        }
+        .carousel-nav-button.prev {
+            left: 10px;
+        }
 
-        .carousel-nav-button.next {
-            right: 10px;
-        }
-    </style>
+        .carousel-nav-button.next {
+            right: 10px;
+        }
+        
+        /* ------------------------------------------- */
+        /* Custom style cho phần About/Skills mới */
+        /* ------------------------------------------- */
+
+        /* Bối cảnh tổng thể cho phần giới thiệu (About) */
+        #about-content {
+            background-color: #f7fafc; 
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card ID Badge */
+        .id-badge {
+            background-color: #e0e7ff; /* indigo-100 */
+            border-radius: 1.5rem;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .id-badge-header {
+            background-color: #4f46e5; /* indigo-600 */
+            border-radius: 0.75rem 0.75rem 0 0;
+            padding: 0.75rem;
+            color: white;
+            text-align: center;
+            font-weight: 700;
+            margin: -2rem -2rem 1.5rem -2rem; /* Kéo ra ngoài padding */
+        }
+
+        /* Phần thông tin */
+        .info-box {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin-top: 1rem;
+        }
+
+        /* Icon styling */
+        .skill-icon {
+            filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Typography cho phần tiêu đề nhỏ */
+        .section-heading-sm {
+            display: inline-block;
+            background-color: #fcd34d; /* Màu vàng nhạt */
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            color: #475569; /* Xám đậm */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        
+        /* Typography cho các tiêu đề kinh nghiệm bổ sung */
+        .experience-tag {
+            display: inline-block;
+            background-color: #d1fae5; /* green-100 */
+            color: #065f46; /* green-900 */
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem; /* text-sm */
+            margin-bottom: 0.5rem;
+        }
+
+    </style>
 </head>
 <body class="scroll-smooth">
 
-    <nav class="sticky top-0 z-50 bg-white shadow-lg backdrop-blur-sm bg-opacity-80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="#hero-section" class="flex-shrink-0 text-xl font-bold text-indigo-600">
-                    TÊN MẪU
-                </a>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#about" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Giới Thiệu</a>
-                        <a href="#skills" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Kỹ Năng</a>
-                        <a href="#portfolio" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Kinh Nghiệm</a>
-                        <a href="#contact" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Liên Hệ</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Thanh Điều Hướng (Navigation Bar) --><nav class="sticky top-0 z-50 bg-white shadow-lg backdrop-blur-sm bg-opacity-80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#hero-section" class="flex-shrink-0 text-xl font-bold text-indigo-600">
+                    TRÀ LY VŨ
+                </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Giới Thiệu</a>
+                        <a href="#skills" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Kỹ Năng</a>
+                        <a href="#portfolio" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Kinh Nghiệm</a>
+                        <a href="#contact" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Liên Hệ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <section id="hero-section">
-        <div id="hero-overlay" class="text-center">
-            <div id="hero-content" class="p-6 rounded-xl bg-black bg-opacity-30">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight">
-                    NGUYỄN VĂN MẪU
-                </h1>
-                <p class="mt-4 text-2xl md:text-3xl font-light text-indigo-400">
-                    SINH VIÊN TRUYỀN THÔNG QUỐC TẾ | HỌC VIỆN MẪU
-                </p>
-                <div class="mt-8">
-                    <a href="#portfolio" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg transform transition duration-300 hover:scale-105">
-                        Xem Kinh Nghiệm
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 1. Phần Giới Thiệu (Hero Section) --><section id="hero-section">
+        <div id="hero-overlay" class="text-center" style="background-image: url('VTL_img/1-bg.png'); background-size: cover; background-position: center;">
+            <div id="hero-content" class="p-6 rounded-xl bg-black bg-opacity-30">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight">
+                    VU TRA LY
+                </h1>
+                <p class="mt-4 text-2xl md:text-3xl font-light text-teal-300">
+                    SINH VIÊN TRUYỀN THÔNG QUỐC TẾ | DAV
+                </p>
+                <div class="mt-8">
+                    <a href="#portfolio" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg transform transition duration-300 hover:scale-105">
+                        Xem Kinh Nghiệm
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="about" class="content-section bg-white">
-        <div class="mx-auto max-w-5xl px-4">
-            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">Giới Thiệu</h2>
-            <div class="grid md:grid-cols-3 gap-10 items-center">
-                <div class="md:col-span-1 flex justify-center">
-                    <img src="https://placehold.co/300x300/e0e7ff/4338ca?text=Ảnh+Chân+Dung" 
-                         alt="Ảnh Chân Dung Mẫu" 
-                         class="rounded-full w-64 h-64 object-cover border-8 border-indigo-300 shadow-2xl">
-                </div>
-                <div class="md:col-span-2 text-gray-700 space-y-4 text-lg">
-                    <p>Tôi là **Mẫu**, sinh viên chuyên ngành **Truyền thông Quốc tế** tại **Học viện Mẫu**. Với kinh nghiệm thực tế trong lĩnh vực sản xuất nội dung đa phương tiện, quản lý mạng xã hội và tổ chức sự kiện, tôi có khả năng xây dựng và truyền tải thông điệp một cách chuyên nghiệp và có tác động.</p>
-                    <p>Tôi luôn chủ động tìm kiếm các cơ hội để ứng dụng kiến thức nền tảng vững chắc và tư duy toàn cầu vào các chiến dịch truyền thông nhằm kết nối cộng đồng và thúc đẩy nhận diện thương hiệu/tổ chức.</p>
-                    <p class="font-semibold text-indigo-600">Tôi tin rằng sự kết hợp giữa kỹ năng đa phương tiện và tư duy chiến lược quốc tế là chìa khóa cho mọi dự án truyền thông thành công vượt trội.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 2. Phần Giới Thiệu Bản Thân (About Me) --><section id="about" class="content-section bg-white">
+        <div class="mx-auto max-w-7xl px-4">
+            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">VỀ TÔI</h2>
+            
+            <div id="about-content" class="grid lg:grid-cols-3 gap-8">
+                
+                <!-- Cột 1: ID Card (Thông tin cá nhân, Học vấn, Ngôn ngữ, Công cụ) --><div class="lg:col-span-1 space-y-6">
+                    <!-- ID Badge -->
+                    <div class="id-badge">
+                        <div class="id-badge-header">
+                            <span class="text-xl">ID CÁ NHÂN</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="VTL_img/1.png" 
+                                 alt="Ảnh Chân Dung" 
+                                 class="rounded-xl w-44 h-44 object-cover border-4 border-white shadow-xl -mt-12 mb-4">
+                            <h3 class="text-2xl font-bold text-gray-900">TRÀ LY VŨ</h3>
+                            <p class="text-sm font-medium text-indigo-600">International Communication Student</p>
+                        </div>
 
-    <section id="skills" class="content-section bg-gray-100">
-        <div class="mx-auto max-w-5xl px-4">
-            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">Kỹ Năng Chuyên Môn</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="card bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
-                    <i data-lucide="video" class="w-8 h-8 text-indigo-600 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Sản Xuất Nội Dung & Digital Media</h3>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
-                        <li>Sáng tạo kịch bản, viết bài báo, phóng sự</li>
-                        <li>Sản xuất video (Quay, Dựng - Capcut, Premiere)</li>
-                        <li>Thiết kế ấn phẩm truyền thông (Canva, Figma cơ bản)</li>
-                        <li>Quản lý nội dung đa nền tảng (Social Media)</li>
-                        <li>Kỹ năng SEO cơ bản cho nội dung web</li>
-                    </ul>
-                </div>
-                <div class="card bg-white p-6 rounded-xl shadow-lg border-t-4 border-emerald-500">
-                    <i data-lucide="mic" class="w-8 h-8 text-emerald-600 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Tổ Chức Sự Kiện & Giao Tiếp</h3>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
-                        <li>Public Speaking & Dẫn chương trình (MC)</li>
-                        <li>Lên kế hoạch và triển khai sự kiện (10+ dự án)</li>
-                        <li>Kỹ năng đàm phán và tìm kiếm tài trợ</li>
-                        <li>Quản lý khủng hoảng truyền thông cơ bản</li>
-                        <li>Giao tiếp đa văn hóa và làm việc nhóm hiệu quả</li>
-                    </ul>
-                </div>
-                <div class="card bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
-                    <i data-lucide="globe" class="w-8 h-8 text-yellow-600 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">Ngoại Ngữ & Tư Duy Quốc Tế</h3>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
-                        <li>Tiếng Anh (Trình độ B2/IELTS Mẫu)</li>
-                        <li>Kiến thức nền tảng về Quan hệ Quốc tế</li>
-                        <li>Lập kế hoạch chiến lược truyền thông toàn cầu</li>
-                        <li>Khả năng nghiên cứu và phân tích dữ liệu</li>
-                        <li>Sử dụng thành thạo MS Office Suite</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <!-- Info Box -->
+                        <div class="info-box">
+                            <p class="text-sm text-gray-500 font-semibold mb-1">D.O.B:</p>
+                            <p class="text-base font-bold text-gray-800">15/08/2005</p>
+                            <div class="h-px bg-gray-200 my-2"></div>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">Email:</p>
+                            <p class="text-base font-bold text-indigo-600 break-all">teacup.dav@gmail.com</p>
+                            <div class="h-px bg-gray-200 my-2"></div>
+                            <p class="text-sm text-gray-500 font-semibold mb-1">Mobile:</p>
+                            <p class="text-base font-bold text-gray-800">(+84) 93 1157 859</p>
+                        </div>
+                    </div>
 
-    <section id="portfolio" class="content-section bg-white">
-        <div class="mx-auto max-w-5xl px-4">
-            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">KINH NGHIỆM & THÀNH TỰU</h2>
-            <div class="grid md:grid-cols-1 gap-10">
-                
-                <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Thực Tập Sinh - Kênh Truyền Thông Mẫu 1 (TTM1)</h3>
-                        <p class="text-sm font-semibold text-indigo-600 mb-4">Vai trò: Thực tập sinh Truyền hình & Biên tập</p>
-                        <p class="text-gray-600 mb-4">Tham gia vào quy trình sản xuất tin tức từ thực địa đến hậu kỳ, đóng vai trò hỗ trợ dẫn chương trình và phóng viên hiện trường.</p>
-                        
-                                                <div id="thp-carousel-container" class="image-carousel-container">
-                            <div id="thp-carousel-slides" class="carousel-slides">
-                                                            </div>
-                                                        <button class="carousel-nav-button prev" onclick="navigateCarousel('thp', -1)">
-                                <i data-lucide="chevron-left" class="w-6 h-6 text-gray-800"></i>
-                            </button>
-                            <button class="carousel-nav-button next" onclick="navigateCarousel('thp', 1)">
-                                <i data-lucide="chevron-right" class="w-6 h-6 text-gray-800"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
-                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
-                                <p class="text-2xl font-extrabold text-indigo-700">10+</p>
-                                <p class="text-xs text-indigo-900">Buổi Phát Sóng (On-air Anchor/Support)</p>
-                            </div>
-                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
-                                <p class="text-2xl font-extrabold text-indigo-700">8+</p>
-                                <p class="text-xs text-indigo-900">Phóng Sự Thực Địa & Bài viết</p>
-                            </div>
-                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
-                                <p class="text-2xl font-extrabold text-indigo-700">10+</p>
-                                <p class="text-xs text-indigo-900">Nội dung đã Chỉnh sửa & Xuất bản</p>
-                            </div>
-                        </div>
+                    <!-- Education -->
+                    <div class="info-box bg-white p-6">
+                        <span class="section-heading-sm bg-yellow-300">HỌC VẤN</span>
+                        <div class="mt-2 space-y-3">
+                            <div>
+                                <p class="text-lg font-bold text-indigo-700">2023 - Hiện tại</p>
+                                <p class="text-gray-800 font-semibold">Học viện Ngoại giao Việt Nam (DAV)</p>
+                                <p class="text-sm text-gray-600">Cử nhân Truyền thông Quốc tế</p>
+                            </div>
+                            <div>
+                                <p class="text-lg font-bold text-indigo-700">2020 - 2023</p>
+                                <p class="text-gray-800 font-semibold">THPT Chuyên Trần Phú (Hải Phòng)</p>
+                                <p class="text-sm text-gray-600">Chuyên ngành: Ngữ văn</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    </div>
-                </div>
+                    <!-- Language & Software -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="info-box bg-white p-4">
+                            <span class="section-heading-sm bg-yellow-300">NGÔN NGỮ</span>
+                            <ul class="list-none space-y-1 mt-2">
+                                <li class="font-semibold text-gray-800">Việt Nam: <span class="font-normal text-indigo-600">Bản ngữ</span></li>
+                                <li class="font-semibold text-gray-800">Tiếng Anh: <span class="font-normal text-indigo-600">Thành thạo (Fluent)</span></li>
+                                <li class="font-semibold text-gray-800">Tiếng Trung: <span class="font-normal text-indigo-600">Cơ bản (Basic)</span></li>
+                            </ul>
+                        </div>
+                        <div class="info-box bg-white p-4">
+                            <span class="section-heading-sm bg-yellow-300">CÔNG CỤ</span>
+                            <div class="flex space-x-3 mt-2 justify-center">
+                                <i data-lucide="scissors" class="w-8 h-8 text-indigo-600 skill-icon" title="Capcut"></i>
+                                <i data-lucide="layers" class="w-8 h-8 text-indigo-600 skill-icon" title="Canva"></i>
+                                <i data-lucide="monitor-play" class="w-8 h-8 text-indigo-600 skill-icon" title="Adobe Premiere"></i>
+                                <i data-lucide="file-text" class="w-8 h-8 text-indigo-600 skill-icon" title="Office 365"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Communications Intern - TẬP ĐOÀN CÔNG NGHỆ MẪU (TCNM)</h3>
-                        <p class="text-sm font-semibold text-indigo-600 mb-4">Vai trò: Thực tập sinh Truyền thông Nội bộ & Sự kiện</p>
-                        <p class="text-gray-600 mb-4">Chịu trách nhiệm sản xuất nội dung đa kênh, hỗ trợ quản lý truyền thông nội bộ và tham gia tổ chức các sự kiện quan trọng của công ty.</p>
-                        
-                                                <div id="elcom-carousel-container" class="image-carousel-container">
-                            <div id="elcom-carousel-slides" class="carousel-slides">
-                                                            </div>
-                                                        <button class="carousel-nav-button prev" onclick="navigateCarousel('elcom', -1)">
-                                <i data-lucide="chevron-left" class="w-6 h-6 text-gray-800"></i>
-                            </button>
-                            <button class="carousel-nav-button next" onclick="navigateCarousel('elcom', 1)">
-                                <i data-lucide="chevron-right" class="w-6 h-6 text-gray-800"></i>
-                            </button>
-                        </div>
+                <!-- Cột 2 & 3: Giới thiệu và Kỹ năng -->
+                <div class="lg:col-span-2 space-y-8">
+                    
+                    <!-- Phần giới thiệu mở rộng -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                        <h3 class="text-3xl font-extrabold text-indigo-600 mb-4">TRÀ LY VŨ</h3>
+                        <p class="text-gray-700 space-y-4 text-lg">
+                            Là một sinh viên Truyền thông Quốc tế chủ động với nền tảng học thuật vững chắc và kinh nghiệm truyền thông thực tiễn. Mục tiêu của tôi là phát triển trong lĩnh vực kể chuyện (storytelling) để ghi lại những khoảnh khắc chân thực và xây dựng các kết nối ý nghĩa. Tôi tiếp cận công việc bằng sự tò mò, lòng nhiệt thành và ý định rõ ràng, luôn tìm kiếm cơ hội để học hỏi và đóng góp thông qua mỗi dự án.
+                        </p>
+                    </div>
 
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
-                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
-                                <p class="text-2xl font-extrabold text-indigo-700">20+</p>
-                                <p class="text-xs text-indigo-900">Nội dung (Text, Photo, Video) đã Xuất bản</p>
-                            </div>
-                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
-                                <p class="text-2xl font-extrabold text-indigo-700">5+</p>
-                                <p class="text-xs text-indigo-900">Sự kiện/Dự án với vai trò Ban Tổ Chức</p>
-                            </div>
-                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
-                                <p class="text-2xl font-extrabold text-indigo-700">3+</p>
-                                <p class="text-xs text-indigo-900">Lần làm MC/TempMaster các Chương trình</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <!-- 3. Phần Kỹ Năng (Skills) - Bố cục mới --><div id="skills" class="space-y-6">
+                        <h3 class="text-3xl font-bold text-gray-800 mt-8 mb-4">Kỹ Năng Chuyên Môn</h3>
 
-            </div>
-        </div>
-    </section>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Core Skills --><div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-emerald-500">
+                                <span class="section-heading-sm bg-emerald-200 text-emerald-800">Core Skills (Kỹ năng cốt lõi)</span>
+                                <ul class="list-none space-y-2 text-gray-700 mt-3">
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Nhiếp ảnh (Sự kiện & Thực địa)</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Quay phim (Filming, Interview, Recording)</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Dựng phim (Video editing)</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Sản xuất Nội dung (Dạng ngắn & Dạng dài)</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Kể chuyện/Hình ảnh Trực quan (Storytelling / Visual narrative)</li>
+                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Báo chí / Phóng sự thực địa (Journalism / Field reporting)</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Soft Skills --><div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
+                                <span class="section-heading-sm bg-yellow-200 text-yellow-800">Soft Skills (Kỹ năng mềm)</span>
+                                <ul class="list-none space-y-2 text-gray-700 mt-3">
+                                    <li class="flex items-center"><i data-lucide="user-check" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Giao tiếp & Làm việc nhóm (Communication & Teamwork)</li>
+                                    <li class="flex items-center"><i data-lucide="clipboard-list" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Tính chi tiết & Cẩn trọng (Detail-oriented)</li>
+                                    <li class="flex items-center"><i data-lucide="zap" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Khả năng thích ứng & Sẵn sàng thực địa (Adaptability & Fieldwork readiness)</li>
+                                    <li class="flex items-center"><i data-lucide="clock" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Quản lý thời gian (Time management)</li>
+                                    <li class="flex items-center"><i data-lucide="brain" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Giải quyết vấn đề (Problem-solving)</li>
+                                    <li class="flex items-center"><i data-lucide="heart" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Sự đồng cảm trong kể chuyện (Empathy in storytelling)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="contact" class="content-section bg-gray-100">
-        <div class="mx-auto max-w-xl px-4">
-            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">Liên Hệ Với Tôi</h2>
-            <div class="bg-white p-8 rounded-xl shadow-2xl space-y-6">
-                <p class="text-center text-gray-600">Tôi luôn sẵn sàng cho các cơ hội hợp tác quốc tế, truyền thông dự án, hoặc các vị trí liên quan đến quan hệ công chúng.</p>
-                
-                <div class="flex justify-center space-x-6">
-                    <a href="mailto:contact@example.com" class="text-gray-700 hover:text-indigo-600 transition duration-150" target="_blank">
-                        <i data-lucide="mail" class="w-8 h-8"></i>
-                    </a>
-                    <a href="#" class="text-gray-700 hover:text-indigo-600 transition duration-150" target="_blank">
-                        <i data-lucide="linkedin" class="w-8 h-8"></i>
-                    </a>
-                    <a href="#" class="text-gray-700 hover:text-indigo-600 transition duration-150" target="_blank">
-                        <i data-lucide="facebook" class="w-8 h-8"></i>
-                    </a>
-                </div>
+    <!-- 4. Phần Kinh Nghiệm & Thành Tựu (Experiences) --><section id="portfolio" class="content-section bg-white">
+        <div class="mx-auto max-w-5xl px-4">
+            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">KINH NGHIỆM & THÀNH TỰU</h2>
+            <div class="grid md:grid-cols-1 gap-10">
+                
+                <!-- Kinh nghiệm 1: THP --><div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">01. Intern - Báo Đài Truyền Hình Hải Phòng (THP)</h3>
+                        <p class="text-sm font-semibold text-indigo-600 mb-4">Vai trò: Thực tập sinh Truyền hình & Báo chí</p>
+                        <p class="text-gray-600 mb-4">Tham gia vào quy trình sản xuất tin tức từ thực địa đến hậu kỳ, đóng vai trò dẫn chương trình và phóng viên hiện trường.</p>
+                        
+                        <!-- Image Carousel Container cho THP -->
+                        <div id="thp-carousel-container" class="image-carousel-container">
+                            <div id="thp-carousel-slides" class="carousel-slides">
+                                <!-- Slides sẽ được render bằng JS -->
+                            </div>
+                            <!-- Nút điều hướng -->
+                            <button class="carousel-nav-button prev" onclick="navigateCarousel('thp', -1)">
+                                <i data-lucide="chevron-left" class="w-6 h-6 text-gray-800"></i>
+                            </button>
+                            <button class="carousel-nav-button next" onclick="navigateCarousel('thp', 1)">
+                                <i data-lucide="chevron-right" class="w-6 h-6 text-gray-800"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Các output/thành tựu --><div class="grid grid-cols-3 gap-4 mt-6">
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">20+</p>
+                                <p class="text-xs text-indigo-900">buổi phát sóng (on-air presenter/news anchor)</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">15+</p>
+                                <p class="text-xs text-indigo-900">field-report videos (quay phim, phỏng vấn, thực địa)</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">20+</p>
+                                <p class="text-xs text-indigo-900">video/clip đã chỉnh sửa (short-form, 15-minute programs)</p>
+                            </div>
+                        </div>
 
-                <div class="text-center text-lg font-medium text-gray-800">
-                    <p>Email: <a href="mailto:contact@example.com" class="text-indigo-600 hover:underline">contact@example.com</a></p>
-                    <p>Điện thoại: (84) XXX XXX XXX</p>
-                </div>
+                    </div>
+                </div>
 
-                <a href="https://placehold.co/1000x800/4338CA/FFFFFF?text=Tải+Về+CV" download class="block w-full text-center mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-full shadow-xl transition duration-300">
-                    Tải CV Mẫu (PDF)
-                </a>
-            </div>
-        </div>
-    </section>
+                <!-- Kinh nghiệm 2: ELCOM --><div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">02. Communications Intern - ELCOM CORPORATION</h3>
+                        <p class="text-sm font-semibold text-indigo-600 mb-4">Vai trò: Thực tập sinh Truyền thông Nội bộ & Sự kiện</p>
+                        <p class="text-gray-600 mb-4">Chịu trách nhiệm sản xuất nội dung đa kênh, quản lý truyền thông nội bộ và dẫn dắt các sự kiện quan trọng của công ty.</p>
+                        
+                        <!-- Image Carousel Container cho ELCOM -->
+                        <div id="elcom-carousel-container" class="image-carousel-container">
+                            <div id="elcom-carousel-slides" class="carousel-slides">
+                                <!-- Slides sẽ được render bằng JS -->
+                            </div>
+                            <!-- Nút điều hướng -->
+                            <button class="carousel-nav-button prev" onclick="navigateCarousel('elcom', -1)">
+                                <i data-lucide="chevron-left" class="w-6 h-6 text-gray-800"></i>
+                            </button>
+                            <button class="carousel-nav-button next" onclick="navigateCarousel('elcom', 1)">
+                                <i data-lucide="chevron-right" class="w-6 h-6 text-gray-800"></i>
+                            </button>
+                        </div>
 
-    <footer class="bg-gray-800 text-white mt-8 py-6">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; 2025 Nguyễn Văn Mẫu. Thiết kế bởi Gemini AI. <span class="text-indigo-400">Chuyên nghiệp. Tác động.</span></p>
-        </div>
-    </footer>
+                        <!-- Các output/thành tựu - 6 ô --><div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">30+</p>
+                                <p class="text-xs text-indigo-900">short-form videos published across internal communication channels</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">35+</p>
+                                <p class="text-xs text-indigo-900">content pieces created and published across corporate channels</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">20+</p>
+                                <p class="text-xs text-indigo-900">communication materials designed and distributed across internal platforms</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">15+</p>
+                                <p class="text-xs text-indigo-900">photography assignments completed for internal training sessions and corporate events</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">10+</p>
+                                <p class="text-xs text-indigo-900">occasions serving as a member of the organizing committee for internal and external corporate events</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">05+</p>
+                                <p class="text-xs text-indigo-900">times serving as Master of Ceremonies (MC) for internal company programs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kinh nghiệm 3: Các kinh nghiệm khác --><div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">03. Các Kinh Nghiệm Khác (Other Experiences)</h3>
+                        <p class="text-sm font-semibold text-indigo-600 mb-6">Hoạt động ngoại khóa & Lãnh đạo dự án cộng đồng</p>
+                        
+                        <div class="space-y-6">
+                            
+                            <!-- 3a: Đại sứ Truyền thông & Nghiên cứu khoa học --><div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-indigo-500">
+                                <div class="flex flex-wrap gap-2 mb-2">
+                                    <span class="experience-tag bg-indigo-100 text-indigo-900">Đại sứ Truyền thông</span>
+                                    <span class="experience-tag bg-indigo-100 text-indigo-900">Nghiên cứu khoa học</span>
+                                    <span class="experience-tag bg-indigo-100 text-indigo-900">Gương mặt sinh viên</span>
+                                </div>
+                                <p class="text-lg font-bold text-indigo-700 mb-1">Communication Ambassador & Team Leader</p>
+                                <p class="text-base text-gray-800 font-semibold mb-2">Vai trò: Đại diện sinh viên, Trưởng nhóm nghiên cứu</p>
+                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                    <li>**Đại sứ Truyền thông** cho hơn **10+** sự kiện và tổ chức thanh niên có ý nghĩa, góp phần tăng cường khả năng hiển thị và tiếp cận của các dự án đến khán giả trẻ.</li>
+                                    <li>**Gương mặt sinh viên tiêu biểu** của Học viện Ngoại giao năm 2024, hỗ trợ công tác tuyển sinh và thu hút nhân tài cho Học viện.</li>
+                                    <li>**Trưởng nhóm** dự án nghiên cứu khoa học đạt **Giải Ba cấp Khoa** tại cuộc thi **iQuest 2025**.</li>
+                                    <li>Sinh viên duy nhất có 2 bài viết cá nhân được đăng tải trên website chính thức của Học viện Ngoại giao (dưới sự bảo trợ của Bộ Ngoại giao).</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 3b: Quản lý Dự án & Truyền thông --><div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-green-500">
+                                <div class="flex flex-wrap gap-2 mb-2">
+                                    <span class="experience-tag">Tổ chức sự kiện</span>
+                                    <span class="experience-tag">Quản lý Nhân sự</span>
+                                    <span class="experience-tag">Truyền thông Nội bộ</span>
+                                </div>
+                                <p class="text-lg font-bold text-green-700 mb-1">Head of Communication & HR Lead</p>
+                                <p class="text-base text-gray-800 font-semibold mb-2">Vai trò: Trưởng ban Tổ chức, Trưởng ban Truyền thông, Trưởng ban Nhân sự</p>
+                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                    <li>**Chair of the Organizing Committee** (Trưởng ban Tổ chức) sự kiện **Cửa Sổ Đại Học 2024**, thu hút hơn **300 học sinh cấp 3** trên địa bàn Hải Phòng.</li>
+                                    <li>**Head of Human Resources gen 1** (Trưởng ban Nhân sự đời 1) của **The AGEE Project** - sáng kiến toàn quốc về giáo dục giới tính.</li>
+                                    <li>**Head of Communication** (Trưởng ban Truyền thông) cho nhiều dự án và sáng kiến do sinh viên dẫn dắt.</li>
+                                    <li>**Member & collaborator of the Communications and Events Committees** (Thành viên/Cộng tác viên Ban Truyền thông & Sự kiện) cho nhiều chương trình quy mô từ cấp trường đến cấp thành phố.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <button id="back-to-top" class="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition duration-300">
-        <i data-lucide="arrow-up" class="w-6 h-6"></i>
-    </button>
+                <!-- 04. Mẫu Sản Phẩm (Work Sample - Video/Content) --><div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500 p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">04. Mẫu Sản Phẩm (Work Sample)</h3>
+                    <p class="text-sm font-semibold text-indigo-600 mb-6">Các tác phẩm tiêu biểu trong quá trình làm việc và học tập</p>
+                    
+                    <div class="space-y-8">
+                        
+                        <!-- Video Samples -->
+                        <div class="border-b pb-4">
+                            <h4 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i data-lucide="monitor-play" class="w-5 h-5 text-indigo-500 mr-2"></i> VIDEO & TRUYỀN HÌNH (THP & ELCOM)</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                
+                                <!-- Mẫu 1 (THP) -->
+                                <div class="bg-white p-4 rounded-lg shadow-inner">
+                                    <p class="font-bold text-indigo-600 truncate">Đền Hải Phòng, đi lòng vòng: Đền Nghè</p>
+                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Dẫn chương trình, Quay phim, Hậu kỳ</p>
+                                    <p class="text-sm text-gray-700">Phóng sự giới thiệu các di tích văn hóa của Hải Phòng, nhằm xây dựng niềm tự hào địa phương và quảng bá thành phố rộng rãi hơn.</p>
+                                </div>
+                                
+                                <!-- Mẫu 2 (THP) -->
+                                <div class="bg-white p-4 rounded-lg shadow-inner">
+                                    <p class="font-bold text-indigo-600 truncate">Thiếu nhi vui hơn hoa - Góc sống vui của nhiều người dân Hải Phòng</p>
+                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Dẫn chương trình, Phỏng vấn, Biên tập hậu kỳ</p>
+                                    <p class="text-sm text-gray-700">Một đoạn phim ngắn về các hoạt động cộng đồng, được phát sóng trên THP và các nền tảng kỹ thuật số.</p>
+                                </div>
 
-    <script>
-        // Khởi tạo icons của Lucide
-        lucide.createIcons();
+                                <!-- Mẫu 3 (ELCOM) -->
+                                <div class="bg-white p-4 rounded-lg shadow-inner">
+                                    <p class="font-bold text-indigo-600 truncate">Quốc tế Thiếu nhi 1/6 tại Elcom cơ này</p>
+                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Quay phim, MC, Dựng phim</p>
+                                    <p class="text-sm text-gray-700">Video tổng kết hoạt động và lễ kỷ niệm Ngày Quốc tế Thiếu nhi tại ELCOM.</p>
+                                </div>
+                                
+                                <!-- Mẫu 4 (ELCOM) -->
+                                <div class="bg-white p-4 rounded-lg shadow-inner">
+                                    <p class="font-bold text-indigo-600 truncate">Trung thu ELCOM 2025</p>
+                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Hậu kỳ sản xuất</p>
+                                    <p class="text-sm text-gray-700">Video recap bao gồm quà tặng trung thu và các hoạt động kỷ niệm cho nhân viên ELCOM.</p>
+                                </div>
+                            </div>
+                        </div>
 
-        // ----------------------------------------------------------------------
-        // 1. Logic cho Image Carousel (Slider) - Đã thêm hiệu ứng Transition
-        // ----------------------------------------------------------------------
+                        <!-- Content Samples -->
+                        <div class="border-b pb-4">
+                            <h4 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i data-lucide="file-text" class="w-5 h-5 text-indigo-500 mr-2"></i> BÀI VIẾT & NỘI DUNG (ELCOM & BÁO CHÍ)</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <!-- Mẫu 5 (Báo chí) -->
+                                <div class="bg-white p-4 rounded-lg shadow-inner">
+                                    <p class="font-bold text-indigo-600 truncate">Cùng giới trẻ Việt tiếp câu chuyện hòa bình</p>
+                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Phát triển nội dung, Phỏng vấn, Viết bài</p>
+                                    <p class="text-sm text-gray-700">Bài viết về cách những người trẻ tiếp nhận và quảng bá giá trị văn hóa, được đăng trên YTV News và Kinh Tế & Đô Thị Newspaper.</p>
+                                </div>
+                                <!-- Mẫu 6 (ELCOM) -->
+                                <div class="bg-white p-4 rounded-lg shadow-inner">
+                                    <p class="font-bold text-indigo-600 truncate">The E-Leaders #01: Chị Nguyễn Thị Tươi - “Người xây dựng sức mạnh tập thể” của R&D ELCOM</p>
+                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Phát triển nội dung, Phỏng vấn, Viết bài</p>
+                                    <p class="text-sm text-gray-700">Series tri ân lãnh đạo doanh nghiệp, phỏng vấn và viết bài về vai trò của họ trong công ty.</p>
+                                </div>
+                                <!-- Mẫu 7 (ELCOM) -->
+                                <div class="bg-white p-4 rounded-lg shadow-inner">
+                                    <p class="font-bold text-indigo-600 truncate">ELCOM tổ chức thành công Hội nghị Chiến lược giai đoạn 2026-2030</p>
+                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Chụp ảnh, Biên tập tin tức, Hỗ trợ truyền thông</p>
+                                    <p class="text-sm text-gray-700">Tin tức trên Facebook và Website công ty về sự kiện quan trọng của doanh nghiệp.</p>
+                                </div>
+                                <!-- Mẫu 8 (DAV) -->
+                                <div class="bg-white p-4 rounded-lg shadow-inner">
+                                    <p class="font-bold text-indigo-600 truncate">Trải nghiệm năm nhất tại Học viện Ngoại giao</p>
+                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Tác giả (Sinh viên duy nhất)</p>
+                                    <p class="text-sm text-gray-700">Bài viết cá nhân được đăng trên website chính thức của Học viện Ngoại giao (dưới sự bảo trợ của Bộ Ngoại giao).</p>
+                                </div>
+                            </div>
+                        </div>
 
-        // Dữ liệu cho các carousel. Nhớ thay thế URL ảnh bằng ảnh thật của bạn!
-        const carouselData = {
-            thp: [
-                { src: "https://images.unsplash.com/photo-1579564858593-353d9e2a10d9?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Dẫn bản tin truyền hình" },
-                { src: "https://images.unsplash.com/photo-1549417246-1aa85b988f91?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Host TV talk show với khách mời" },
-                { src: "https://images.unsplash.com/photo-1508625076632-1b1563f69919?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Dẫn chương trình phỏng vấn" },
-                { src: "https://images.unsplash.com/photo-1510511459019-5be77d59728c?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Thực hiện phóng sự thực địa" },
-                { src: "https://images.unsplash.com/photo-1520607994657-3f3380026e63?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Phỏng vấn các cá nhân tiêu biểu" },
-                { src: "https://images.unsplash.com/photo-1533411032398-3850731a5f4a?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Lồng tiếng & Hậu kỳ video" }
-            ],
-            elcom: [
-                { src: "https://images.unsplash.com/photo-1522071820081-004f0151c27e?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Sản xuất video ngắn" },
-                { src: "https://images.unsplash.com/photo-1517457210988-78262b921387?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Tổ chức sự kiện nội bộ & Đối ngoại" },
-                { src: "https://images.unsplash.com/photo-1506863143525-cebba1970220?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Dẫn chương trình (MC) các sự kiện" },
-                { src: "https://images.unsplash.com/photo-1516321350800-47e923e3e264?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Phỏng vấn nhân viên" },
-                { src: "https://images.unsplash.com/photo-1522071820081-004f0151c27e?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Nội dung được xuất bản" },
-                { src: "https://images.unsplash.com/photo-1549417246-1aa85b988f91?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hình ảnh Mẫu: Phát triển chuỗi truyền thông mới" }
-            ]
-        };
+                    </div>
+                </div>
 
-        // State để theo dõi slide hiện tại cho từng carousel
-        let currentSlides = {
-            thp: 0,
-            elcom: 0
-        };
+            </div>
+        </div>
+    </section>
 
-        // Hàm để tạo HTML cho các slide dựa trên dữ liệu
-        function renderCarousel(id) {
-            const data = carouselData[id];
-            const slidesContainer = document.getElementById(`${id}-carousel-slides`);
-            
-            if (!slidesContainer) return;
+    <!-- 5. Phần Liên Hệ (Contact) -->
+    <section id="contact" 
+            class="content-section bg-gray-100 relative"
+            style="background-image: url('VTL_img/bg-template.png');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;">
 
-            // Tạo HTML cho tất cả các slide
-            let slidesHTML = data.map((item, index) => `
-                <div class="carousel-slide ${index === 0 ? 'active' : ''}">
-                    <div class="carousel-image-wrapper">
-                                                <img src="${item.src}" alt="${item.caption}" onerror="this.onerror=null; this.src='https://placehold.co/600x300/e0e7ff/4338ca?text=Image+Error'">
-                    </div>
-                    <p class="carousel-caption">${item.caption}</p>
-                </div>
-            `).join('');
-            
-            slidesContainer.innerHTML = slidesHTML;
-        }
+        <!-- lớp mờ để chữ dễ nhìn -->
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
 
-        // Hàm để chuyển slide khi nhấn nút điều hướng
-        function navigateCarousel(id, direction) {
-            const data = carouselData[id];
-            let currentIndex = currentSlides[id];
-            
-            // Tìm slide mới
-            let newIndex = currentIndex + direction;
+        <div class="relative mx-auto max-w-xl px-4 py-10">
+            <h2 class="text-4xl font-bold text-gray-100 mb-12 text-center border-b-4 border-indigo-400 pb-3 inline-block mx-auto">
+                Liên Hệ Với Tôi
+            </h2>
 
-            // Xử lý lặp (looping)
-            if (newIndex < 0) {
-                newIndex = data.length - 1; // Quay lại slide cuối
-            } else if (newIndex >= data.length) {
-                newIndex = 0; // Quay lại slide đầu tiên
-            }
+            <div class="bg-white p-8 rounded-xl shadow-2xl space-y-6">
+                <p class="text-center text-gray-600">
+                    Tôi luôn sẵn sàng cho các cơ hội hợp tác quốc tế, truyền thông dự án, hoặc các vị trí liên quan đến quan hệ công chúng.
+                </p>
+                
+                <div class="flex justify-center space-x-6">
+                    <a href="mailto:contact@example.com" class="text-gray-700 hover:text-indigo-600 transition duration-150">
+                        <i data-lucide="mail" class="w-8 h-8"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600 transition duration-150">
+                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600 transition duration-150">
+                        <i data-lucide="facebook" class="w-8 h-8"></i>
+                    </a>
+                </div>
 
-            // Lấy tất cả các slide
-            const slides = document.querySelectorAll(`#${id}-carousel-slides .carousel-slide`);
+                <div class="text-center text-lg font-medium text-gray-800">
+                    <p>Email: <a href="mailto:teacup.dav@gmail.com" class="text-indigo-600 hover:underline">teacup.dav@gmail.com</a></p>
+                    <p>Điện thoại: (84) 93 1157 859</p>
+                </div>
 
-            // Loại bỏ class 'active' khỏi slide cũ
-            slides[currentIndex].classList.remove('active');
+                <a href="https://placehold.co/1000x800/4338CA/FFFFFF?text=Tải+Về+CV" 
+                download
+                class="block w-full text-center mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-full shadow-xl transition duration-300">
+                    Tải CV (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
 
-            // Thêm class 'active' cho slide mới
-            slides[newIndex].classList.add('active');
 
-            // Cập nhật state
-            currentSlides[id] = newIndex;
-        }
+    <!-- Footer --><footer class="bg-gray-800 text-white mt-8 py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 TRÀ LY VŨ. <span class="text-indigo-400"></span></p>
+        </div>
+    </footer>
 
-        // Hàm khởi tạo tất cả carousels
-        function initializeCarousels() {
-            renderCarousel('thp');
-            renderCarousel('elcom');
-            
-            // Khởi tạo lại icons sau khi nội dung động được thêm vào
-            lucide.createIcons();
-        }
+    <!-- Nút Cuộn Lên Đầu Trang --><button id="back-to-top" class="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition duration-300">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
 
-        // ----------------------------------------------------------------------
-        // 2. Các logic chung khác
-        // ----------------------------------------------------------------------
-        
-        // Parallax Effect (Hiệu ứng Thị sai)
-        const heroSection = document.getElementById('hero-section');
-        const heroContent = document.getElementById('hero-content');
-        // Back-to-Top Button
-        const backToTopButton = document.getElementById('back-to-top');
+    <script>
+        // Khởi tạo icons của Lucide
+        lucide.createIcons();
 
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.pageYOffset;
+        // ----------------------------------------------------------------------
+        // 1. Logic cho Image Carousel (Slider) - Đã thêm hiệu ứng Transition
+        // ----------------------------------------------------------------------
 
-            // Hiệu ứng dịch chuyển cho background (Parallax)
-            heroSection.style.backgroundPositionY = `${-scrollPosition * 0.5}px`;
+        // Dữ liệu cho các carousel. Nhớ thay thế URL ảnh bằng ảnh thật của bạn!
+        // Lưu ý: Các ảnh trong data này chỉ là placeholder từ Unsplash, bạn cần thay bằng ảnh của mình
+        const carouselData = {
+            thp: [
+                { src: "VTL_img/bg-template.png", caption: "Dẫn bản tin truyền hình" },
+                { src: "https://images.unsplash.com/photo-1549417246-1aa85b988f91?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Hosting TV talk show với khách mời" },
+                { src: "https://images.unsplash-1.jpg", caption: "Dẫn chương trình chuyên đề" },
+                { src: "https://images.unsplash-2.jpg", caption: "Thực hiện phóng sự thực địa" },
+                { src: "https://images.unsplash-3.jpg", caption: "Phỏng vấn các cá nhân tiêu biểu" },
+                { src: "https://images.unsplash-4.jpg", caption: "Dựng video & Lồng tiếng hậu kỳ" }
+            ],
+            elcom: [
+                { src: "https://images.unsplash.com/photo-1522071820081-004f0151c27e?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=300", caption: "Phối hợp với các phòng ban cho bài viết" },
+                { src: "https://images.unsplash-5.jpg", caption: "Sản xuất nội dung viết & kịch bản" },
+                { src: "https://images.unsplash-6.jpg", caption: "Quay phim & Thiết kế ảnh truyền thông" },
+                { src: "https://images.unsplash-7.jpg", caption: "Hỗ trợ vận hành truyền thông, social media" },
+                { src: "https://images.unsplash-8.jpg", caption: "Hỗ trợ hành chính và hậu cần truyền thông" },
+                { src: "https://images.unsplash-9.jpg", caption: "Làm MC/TempMaster các chương trình" }
+            ]
+        };
 
-            // Hiệu ứng mờ dần cho nội dung
-            const opacity = 1 - (scrollPosition / 500); 
-            heroContent.style.opacity = opacity < 0 ? 0 : opacity;
-            
-            // Hiệu ứng scale (phóng to/thu nhỏ)
-            const scale = 1 - (scrollPosition * 0.0005);
-            heroContent.style.transform = `scale(${scale < 0.8 ? 0.8 : scale})`;
-            
-            // Hiển thị/Ẩn nút Back-to-Top
-            if (window.pageYOffset > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
+        // State để theo dõi slide hiện tại cho từng carousel
+        let currentSlides = {
+            thp: 0,
+            elcom: 0
+        };
 
-        // Sự kiện click để cuộn lên đầu trang
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Smooth Scrolling (Cuộn mượt mà khi click menu)
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+        // Hàm để tạo HTML cho các slide dựa trên dữ liệu
+        function renderCarousel(id) {
+            const data = carouselData[id];
+            const slidesContainer = document.getElementById(`${id}-carousel-slides`);
+            
+            if (!slidesContainer) return;
 
-        // Chạy khởi tạo carousel khi trang tải xong
-        window.addEventListener('load', initializeCarousels);
-        
-    </script>
+            // Tạo HTML cho tất cả các slide
+            let slidesHTML = data.map((item, index) => `
+                <div class="carousel-slide ${index === 0 ? 'active' : ''}">
+                    <div class="carousel-image-wrapper">
+                        <!-- Thêm onerror để xử lý trường hợp không load được ảnh -->
+                        <img src="${item.src}" alt="${item.caption}" onerror="this.onerror=null; this.src='https://placehold.co/600x300/e0e7ff/4338ca?text=Image+Error+${index + 1}'">
+                    </div>
+                    <p class="carousel-caption">${item.caption}</p>
+                </div>
+            `).join('');
+            
+            slidesContainer.innerHTML = slidesHTML;
+        }
+
+        // Hàm để chuyển slide khi nhấn nút điều hướng
+        function navigateCarousel(id, direction) {
+            const data = carouselData[id];
+            let currentIndex = currentSlides[id];
+            
+            // Tìm slide mới
+            let newIndex = currentIndex + direction;
+
+            // Xử lý lặp (looping)
+            if (newIndex < 0) {
+                newIndex = data.length - 1; // Quay lại slide cuối
+            } else if (newIndex >= data.length) {
+                newIndex = 0; // Quay lại slide đầu tiên
+            }
+
+            // Lấy tất cả các slide
+            const slides = document.querySelectorAll(`#${id}-carousel-slides .carousel-slide`);
+
+            // Loại bỏ class 'active' khỏi slide cũ
+            slides[currentIndex].classList.remove('active');
+
+            // Thêm class 'active' cho slide mới
+            slides[newIndex].classList.add('active');
+
+            // Cập nhật state
+            currentSlides[id] = newIndex;
+        }
+
+        // Hàm khởi tạo tất cả carousels
+        function initializeCarousels() {
+            renderCarousel('thp');
+            renderCarousel('elcom');
+            
+            // Khởi tạo lại icons sau khi nội dung động được thêm vào
+            lucide.createIcons();
+        }
+
+        // ----------------------------------------------------------------------
+        // 2. Các logic chung khác
+        // ----------------------------------------------------------------------
+        
+        // Parallax Effect (Hiệu ứng Thị sai)
+        const heroSection = document.getElementById('hero-section');
+        const heroContent = document.getElementById('hero-content');
+        // Back-to-Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.pageYOffset;
+
+            // Hiệu ứng dịch chuyển cho background (Parallax)
+            heroSection.style.backgroundPositionY = `${-scrollPosition * 0.5}px`;
+
+            // Hiệu ứng mờ dần cho nội dung
+            const opacity = 1 - (scrollPosition / 500); 
+            heroContent.style.opacity = opacity < 0 ? 0 : opacity;
+            
+            // Hiệu ứng scale (phóng to/thu nhỏ)
+            const scale = 1 - (scrollPosition * 0.0005);
+            heroContent.style.transform = `scale(${scale < 0.8 ? 0.8 : scale})`;
+            
+            // Hiển thị/Ẩn nút Back-to-Top
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        // Sự kiện click để cuộn lên đầu trang
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth Scrolling (Cuộn mượt mà khi click menu)
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Chạy khởi tạo carousel khi trang tải xong
+        window.addEventListener('load', initializeCarousels);
+        
+    </script>
 </body>
 </html>
