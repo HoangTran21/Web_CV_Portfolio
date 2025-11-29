@@ -79,7 +79,7 @@
             overflow: hidden;
             background-color: #eef2ff; /* indigo-50 */
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            height: 360px; /* Chiều cao tổng: 300px ảnh + 60px caption */
+            height: 300px; /* Chiều cao tổng: ảnh + cap */
         }
         
         /* Container chứa tất cả các slide - dùng để positioning */
@@ -113,6 +113,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .carousel-caption {
@@ -255,7 +256,7 @@
                 <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight">
                     VU TRA LY
                 </h1>
-                <p class="mt-4 text-2xl md:text-3xl font-light text-teal-300">
+                <p class="mt-4 text-2xl md:text-3xl font-light text-indigo-300">
                     SINH VIÊN TRUYỀN THÔNG QUỐC TẾ | DAV
                 </p>
                 <div class="mt-8">
@@ -267,129 +268,225 @@
         </div>
     </section>
 
-    <!-- 2. Phần Giới Thiệu Bản Thân (About Me) --><section id="about" class="content-section bg-white">
-        <div class="mx-auto max-w-7xl px-4">
-            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">VỀ TÔI</h2>
+<!-- 2. Phần Giới Thiệu Bản Thân (About Me) -->
+<section id="about" class="content-section bg-white">
+    <div class="mx-auto max-w-7xl px-4">
+
+        <!-- Tiêu đề -->
+        <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">
+            VỀ TÔI
+        </h2>
+
+        <!-- Bố cục 3 cột -->
+        <div id="about-content" class="grid lg:grid-cols-3 gap-8">
             
-            <div id="about-content" class="grid lg:grid-cols-3 gap-8">
-                
-                <!-- Cột 1: ID Card (Thông tin cá nhân, Học vấn, Ngôn ngữ, Công cụ) --><div class="lg:col-span-1 space-y-6">
-                    <!-- ID Badge -->
-                    <div class="id-badge">
-                        <div class="id-badge-header">
-                            <span class="text-xl">ID CÁ NHÂN</span>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <img src="VTL_img/1.png" 
-                                 alt="Ảnh Chân Dung" 
-                                 class="rounded-xl w-44 h-44 object-cover border-4 border-white shadow-xl -mt-12 mb-4">
-                            <h3 class="text-2xl font-bold text-gray-900">TRÀ LY VŨ</h3>
-                            <p class="text-sm font-medium text-indigo-600">International Communication Student</p>
-                        </div>
+            <!-- CỘT 1: ID + Học vấn + Ngôn ngữ + Công cụ -->
+            <div class="lg:col-span-1 space-y-6">
 
-                        <!-- Info Box -->
-                        <div class="info-box">
-                            <p class="text-sm text-gray-500 font-semibold mb-1">D.O.B:</p>
-                            <p class="text-base font-bold text-gray-800">15/08/2005</p>
-                            <div class="h-px bg-gray-200 my-2"></div>
-                            <p class="text-sm text-gray-500 font-semibold mb-1">Email:</p>
-                            <p class="text-base font-bold text-indigo-600 break-all">teacup.dav@gmail.com</p>
-                            <div class="h-px bg-gray-200 my-2"></div>
-                            <p class="text-sm text-gray-500 font-semibold mb-1">Mobile:</p>
-                            <p class="text-base font-bold text-gray-800">(+84) 93 1157 859</p>
-                        </div>
+                <!-- ID Badge -->
+                <div class="id-badge rounded-xl shadow-md bg-white">
+                    <div class="bg-indigo-600 text-white text-center py-3 rounded-t-xl">
+                        <span class="text-xl font-semibold tracking-wide">ID CÁ NHÂN</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="flex flex-col items-center py-6 px-4">
+                        <img src="VTL_img/1.png" 
+                             alt="Ảnh Chân Dung" 
+                             class="rounded-xl w-44 h-44 object-cover border-4 border-white shadow-xl -mt-12 mb-4">
+
+                        <h3 class="text-2xl font-bold text-gray-900">TRÀ LY VŨ</h3>
+                        <p class="text-sm font-medium text-indigo-600">
+                            International Communication Student
+                        </p>
                     </div>
 
-                    <!-- Education -->
-                    <div class="info-box bg-white p-6">
-                        <span class="section-heading-sm bg-yellow-300">HỌC VẤN</span>
-                        <div class="mt-2 space-y-3">
-                            <div>
-                                <p class="text-lg font-bold text-indigo-700">2023 - Hiện tại</p>
-                                <p class="text-gray-800 font-semibold">Học viện Ngoại giao Việt Nam (DAV)</p>
-                                <p class="text-sm text-gray-600">Cử nhân Truyền thông Quốc tế</p>
-                            </div>
-                            <div>
-                                <p class="text-lg font-bold text-indigo-700">2020 - 2023</p>
-                                <p class="text-gray-800 font-semibold">THPT Chuyên Trần Phú (Hải Phòng)</p>
-                                <p class="text-sm text-gray-600">Chuyên ngành: Ngữ văn</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Info Box -->
+                    <div class="info-box px-6 pb-6">
+                        <p class="text-sm text-gray-500 font-semibold mb-1">D.O.B:</p>
+                        <p class="text-base font-bold text-gray-800">15/08/2005</p>
 
-                    <!-- Language & Software -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="info-box bg-white p-4">
-                            <span class="section-heading-sm bg-yellow-300">NGÔN NGỮ</span>
-                            <ul class="list-none space-y-1 mt-2">
-                                <li class="font-semibold text-gray-800">Việt Nam: <span class="font-normal text-indigo-600">Bản ngữ</span></li>
-                                <li class="font-semibold text-gray-800">Tiếng Anh: <span class="font-normal text-indigo-600">Thành thạo (Fluent)</span></li>
-                                <li class="font-semibold text-gray-800">Tiếng Trung: <span class="font-normal text-indigo-600">Cơ bản (Basic)</span></li>
-                            </ul>
+                        <div class="h-px bg-gray-200 my-3"></div>
+
+                        <p class="text-sm text-gray-500 font-semibold mb-1">Email:</p>
+                        <p class="text-base font-bold text-indigo-600 break-all">
+                            teacup.dav@gmail.com
+                        </p>
+
+                        <div class="h-px bg-gray-200 my-3"></div>
+
+                        <p class="text-sm text-gray-500 font-semibold mb-1">Mobile:</p>
+                        <p class="text-base font-bold text-gray-800">(+84) 93 1157 859</p>
+                    </div>
+                </div>
+
+                <!-- HỌC VẤN -->
+                <div class="info-box bg-white p-6 rounded-xl shadow-md">
+                    <span class="section-heading-sm bg-yellow-300">HỌC VẤN</span>
+                    
+                    <div class="mt-3 space-y-4">
+                        <div>
+                            <p class="text-lg font-bold text-indigo-700">2023 - Hiện tại</p>
+                            <p class="text-gray-800 font-semibold">
+                                Học viện Ngoại giao Việt Nam (DAV)
+                            </p>
+                            <p class="text-sm text-gray-600">Cử nhân Truyền thông Quốc tế</p>
                         </div>
-                        <div class="info-box bg-white p-4">
-                            <span class="section-heading-sm bg-yellow-300">CÔNG CỤ</span>
-                            <div class="flex space-x-3 mt-2 justify-center">
-                                <i data-lucide="scissors" class="w-8 h-8 text-indigo-600 skill-icon" title="Capcut"></i>
-                                <i data-lucide="layers" class="w-8 h-8 text-indigo-600 skill-icon" title="Canva"></i>
-                                <i data-lucide="monitor-play" class="w-8 h-8 text-indigo-600 skill-icon" title="Adobe Premiere"></i>
-                                <i data-lucide="file-text" class="w-8 h-8 text-indigo-600 skill-icon" title="Office 365"></i>
-                            </div>
+
+                        <div>
+                            <p class="text-lg font-bold text-indigo-700">2020 - 2023</p>
+                            <p class="text-gray-800 font-semibold">
+                                THPT Chuyên Trần Phú (Hải Phòng)
+                            </p>
+                            <p class="text-sm text-gray-600">Chuyên ngành: Ngữ văn</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Cột 2 & 3: Giới thiệu và Kỹ năng -->
-                <div class="lg:col-span-2 space-y-8">
-                    
-                    <!-- Phần giới thiệu mở rộng -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
-                        <h3 class="text-3xl font-extrabold text-indigo-600 mb-4">TRÀ LY VŨ</h3>
-                        <p class="text-gray-700 space-y-4 text-lg">
-                            Là một sinh viên Truyền thông Quốc tế chủ động với nền tảng học thuật vững chắc và kinh nghiệm truyền thông thực tiễn. Mục tiêu của tôi là phát triển trong lĩnh vực kể chuyện (storytelling) để ghi lại những khoảnh khắc chân thực và xây dựng các kết nối ý nghĩa. Tôi tiếp cận công việc bằng sự tò mò, lòng nhiệt thành và ý định rõ ràng, luôn tìm kiếm cơ hội để học hỏi và đóng góp thông qua mỗi dự án.
-                        </p>
+                <!-- NGÔN NGỮ + CÔNG CỤ -->
+                <div class="grid grid-cols-2 gap-4">
+
+                    <!-- Ngôn Ngữ -->
+                    <div class="info-box bg-white p-4 rounded-xl shadow-md">
+                        <span class="section-heading-sm bg-yellow-300">NGÔN NGỮ</span>
+
+                        <ul class="list-none space-y-1 mt-2">
+                            <li class="font-semibold text-gray-800">
+                                Việt Nam: <span class="font-normal text-indigo-600">Bản ngữ</span>
+                            </li>
+                            <li class="font-semibold text-gray-800">
+                                Tiếng Anh: <span class="font-normal text-indigo-600">Thành thạo (Fluent)</span>
+                            </li>
+                            <li class="font-semibold text-gray-800">
+                                Tiếng Trung: <span class="font-normal text-indigo-600">Cơ bản (Basic)</span>
+                            </li>
+                        </ul>
                     </div>
 
-                    <!-- 3. Phần Kỹ Năng (Skills) - Bố cục mới --><div id="skills" class="space-y-6">
-                        <h3 class="text-3xl font-bold text-gray-800 mt-8 mb-4">Kỹ Năng Chuyên Môn</h3>
-
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <!-- Core Skills --><div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-emerald-500">
-                                <span class="section-heading-sm bg-emerald-200 text-emerald-800">Core Skills (Kỹ năng cốt lõi)</span>
-                                <ul class="list-none space-y-2 text-gray-700 mt-3">
-                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Nhiếp ảnh (Sự kiện & Thực địa)</li>
-                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Quay phim (Filming, Interview, Recording)</li>
-                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Dựng phim (Video editing)</li>
-                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Sản xuất Nội dung (Dạng ngắn & Dạng dài)</li>
-                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Kể chuyện/Hình ảnh Trực quan (Storytelling / Visual narrative)</li>
-                                    <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0"></i> Báo chí / Phóng sự thực địa (Journalism / Field reporting)</li>
-                                </ul>
+                    <!-- Công cụ -->
+                    <div class="info-box bg-white p-4 rounded-xl shadow-md">
+                        <span class="section-heading-sm bg-yellow-300">CÔNG CỤ</span>
+                        <!-- Lưới 2x2 -->
+                        <div class="grid grid-cols-2 gap-4 mt-4">
+                            <!-- Mỗi logo trong một khung vuông -->
+                            <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
+                                <img src="VTL_img/tools/capcut.png"
+                                    alt="CapCut"
+                                    class="w-16 h-16 object-contain" />
                             </div>
-                            
-                            <!-- Soft Skills --><div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
-                                <span class="section-heading-sm bg-yellow-200 text-yellow-800">Soft Skills (Kỹ năng mềm)</span>
-                                <ul class="list-none space-y-2 text-gray-700 mt-3">
-                                    <li class="flex items-center"><i data-lucide="user-check" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Giao tiếp & Làm việc nhóm (Communication & Teamwork)</li>
-                                    <li class="flex items-center"><i data-lucide="clipboard-list" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Tính chi tiết & Cẩn trọng (Detail-oriented)</li>
-                                    <li class="flex items-center"><i data-lucide="zap" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Khả năng thích ứng & Sẵn sàng thực địa (Adaptability & Fieldwork readiness)</li>
-                                    <li class="flex items-center"><i data-lucide="clock" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Quản lý thời gian (Time management)</li>
-                                    <li class="flex items-center"><i data-lucide="brain" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Giải quyết vấn đề (Problem-solving)</li>
-                                    <li class="flex items-center"><i data-lucide="heart" class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0"></i> Sự đồng cảm trong kể chuyện (Empathy in storytelling)</li>
-                                </ul>
+                            <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
+                                <img src="VTL_img/tools/canva.png   "
+                                    alt="Canva"
+                                    class="w-16 h-16 object-contain" />
+                            </div>
+
+                            <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
+                                <img src="VTL_img/tools/pr.png"
+                                    alt="Premiere Pro"
+                                    class="w-16 h-16 object-contain" />
+                            </div>
+                            <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
+                                <img src="VTL_img/tools/office365.png"
+                                    alt="Office 365"
+                                    class="w-16 h-16 object-contain" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- CỘT 2 & 3 → GIỚI THIỆU + KỸ NĂNG -->
+            <div class="lg:col-span-2 space-y-8">
+
+                <!-- Giới thiệu -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                    <h3 class="text-3xl font-extrabold text-indigo-600 mb-4">
+                        TRÀ LY VŨ
+                    </h3>
+
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Là một sinh viên Truyền thông Quốc tế chủ động với nền tảng học thuật vững chắc và kinh nghiệm truyền thông thực tiễn. 
+                        Mục tiêu của tôi là phát triển trong lĩnh vực kể chuyện (storytelling) để ghi lại những khoảnh khắc chân thực và xây dựng 
+                        các kết nối ý nghĩa. Tôi tiếp cận công việc bằng sự tò mò, lòng nhiệt thành và ý định rõ ràng, luôn tìm kiếm cơ hội để học 
+                        hỏi và đóng góp thông qua mỗi dự án.
+                    </p>
+                </div>
+
+                <!-- Kỹ năng -->
+                <div id="skills" class="space-y-6">
+                    <h3 class="text-3xl font-bold text-gray-800 mt-8 mb-4">
+                        Kỹ Năng Chuyên Môn
+                    </h3>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+
+                        <!-- Core Skills -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-emerald-500">
+                            <span class="section-heading-sm bg-emerald-200 text-emerald-800">
+                                Core Skills (Kỹ năng cốt lõi)
+                            </span>
+
+                            <ul class="list-none space-y-2 text-gray-700 mt-3">
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Nhiếp ảnh (Sự kiện & Thực địa)
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Quay phim (Filming, Interview, Recording)
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Dựng phim (Video editing)
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Sản xuất Nội dung (Dạng ngắn & Dạng dài)
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Kể chuyện / Visual narrative
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Báo chí / Phóng sự thực địa
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Soft Skills -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
+                            <span class="section-heading-sm bg-yellow-200 text-yellow-800">
+                                Soft Skills (Kỹ năng mềm)
+                            </span>
+
+                            <ul class="list-none space-y-2 text-gray-700 mt-3">
+                                <li class="flex items-center"><i data-lucide="user-check" class="w-5 h-5 text-yellow-500 mr-2"></i> Giao tiếp & Làm việc nhóm</li>
+                                <li class="flex items-center"><i data-lucide="clipboard-list" class="w-5 h-5 text-yellow-500 mr-2"></i> Tính chi tiết & Cẩn trọng</li>
+                                <li class="flex items-center"><i data-lucide="zap" class="w-5 h-5 text-yellow-500 mr-2"></i> Khả năng thích ứng</li>
+                                <li class="flex items-center"><i data-lucide="clock" class="w-5 h-5 text-yellow-500 mr-2"></i> Quản lý thời gian</li>
+                                <li class="flex items-center"><i data-lucide="brain" class="w-5 h-5 text-yellow-500 mr-2"></i> Giải quyết vấn đề</li>
+                                <li class="flex items-center"><i data-lucide="heart" class="w-5 h-5 text-yellow-500 mr-2"></i> Đồng cảm trong kể chuyện</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-    </section>
+
+    </div>
+</section>
 
     <!-- 4. Phần Kinh Nghiệm & Thành Tựu (Experiences) --><section id="portfolio" class="content-section bg-white">
         <div class="mx-auto max-w-5xl px-4">
             <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">KINH NGHIỆM & THÀNH TỰU</h2>
             <div class="grid md:grid-cols-1 gap-10">
                 
-                <!-- Kinh nghiệm 1: THP --><div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                <!-- Kinh nghiệm 1: THP -->
+                 <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-3 text-gray-800">01. Intern - Báo Đài Truyền Hình Hải Phòng (THP)</h3>
                         <p class="text-sm font-semibold text-indigo-600 mb-4">Vai trò: Thực tập sinh Truyền hình & Báo chí</p>
@@ -427,7 +524,8 @@
                     </div>
                 </div>
 
-                <!-- Kinh nghiệm 2: ELCOM --><div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                <!-- Kinh nghiệm 2: ELCOM -->
+                 <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-3 text-gray-800">02. Communications Intern - ELCOM CORPORATION</h3>
                         <p class="text-sm font-semibold text-indigo-600 mb-4">Vai trò: Thực tập sinh Truyền thông Nội bộ & Sự kiện</p>
@@ -476,86 +574,176 @@
                     </div>
                 </div>
                 
-                <!-- Kinh nghiệm 3: Các kinh nghiệm khác --><div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800">03. Các Kinh Nghiệm Khác (Other Experiences)</h3>
-                        <p class="text-sm font-semibold text-indigo-600 mb-6">Hoạt động ngoại khóa & Lãnh đạo dự án cộng đồng</p>
-                        
-                        <div class="space-y-6">
+                    <!-- Kinh nghiệm 3: Các kinh nghiệm khác -->
+                    <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">03. Các Kinh Nghiệm Khác (Other Experiences)</h3>
+                            <p class="text-sm font-semibold text-indigo-600 mb-6">Hoạt động ngoại khóa & Lãnh đạo dự án cộng đồng</p>
                             
-                            <!-- 3a: Đại sứ Truyền thông & Nghiên cứu khoa học --><div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-indigo-500">
-                                <div class="flex flex-wrap gap-2 mb-2">
-                                    <span class="experience-tag bg-indigo-100 text-indigo-900">Đại sứ Truyền thông</span>
-                                    <span class="experience-tag bg-indigo-100 text-indigo-900">Nghiên cứu khoa học</span>
-                                    <span class="experience-tag bg-indigo-100 text-indigo-900">Gương mặt sinh viên</span>
+                            <div class="space-y-6">
+                                
+                                <!-- 3a: Đại sứ Truyền thông & Nghiên cứu khoa học -->
+                                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-indigo-500">
+                                    <div class="flex flex-wrap gap-2 mb-2">
+                                        <span class="experience-tag bg-indigo-100 text-indigo-900">Đại sứ Truyền thông</span>
+                                        <span class="experience-tag bg-indigo-100 text-indigo-900">Nghiên cứu khoa học</span>
+                                        <span class="experience-tag bg-indigo-100 text-indigo-900">Gương mặt sinh viên</span>
+                                    </div>
+
+                                    <p class="text-lg font-bold text-indigo-700 mb-1">Communication Ambassador & Team Leader</p>
+                                    <p class="text-base text-gray-800 font-semibold mb-2">Vai trò: Đại diện sinh viên, Trưởng nhóm nghiên cứu</p>
+
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li>Đại sứ Truyền thông cho hơn 10+ sự kiện và tổ chức thanh niên, góp phần tăng cường khả năng hiển thị và tiếp cận của các dự án.</li>
+
+                                        <li>Gương mặt sinh viên tiêu biểu của Học viện Ngoại giao năm 2024, hỗ trợ công tác tuyển sinh và thu hút nhân tài cho Học viện.</li>
+
+                                        <li>Trưởng nhóm dự án nghiên cứu khoa học đạt 
+                                            <span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 font-semibold rounded-md px-2">
+                                                Giải Ba cấp Khoa tại cuộc thi iQuest 2025
+                                            </span>.
+                                        </li>
+
+                                        <li>Sinh viên duy nhất có 
+                                            <span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 font-semibold rounded-md px-2">
+                                                2 bài viết cá nhân được đăng trên website chính thức của Học viện Ngoại giao
+                                            </span>
+                                            (dưới sự bảo trợ của Bộ Ngoại giao).
+                                        </li>
+                                    </ul>
                                 </div>
-                                <p class="text-lg font-bold text-indigo-700 mb-1">Communication Ambassador & Team Leader</p>
-                                <p class="text-base text-gray-800 font-semibold mb-2">Vai trò: Đại diện sinh viên, Trưởng nhóm nghiên cứu</p>
-                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    <li>**Đại sứ Truyền thông** cho hơn **10+** sự kiện và tổ chức thanh niên có ý nghĩa, góp phần tăng cường khả năng hiển thị và tiếp cận của các dự án đến khán giả trẻ.</li>
-                                    <li>**Gương mặt sinh viên tiêu biểu** của Học viện Ngoại giao năm 2024, hỗ trợ công tác tuyển sinh và thu hút nhân tài cho Học viện.</li>
-                                    <li>**Trưởng nhóm** dự án nghiên cứu khoa học đạt **Giải Ba cấp Khoa** tại cuộc thi **iQuest 2025**.</li>
-                                    <li>Sinh viên duy nhất có 2 bài viết cá nhân được đăng tải trên website chính thức của Học viện Ngoại giao (dưới sự bảo trợ của Bộ Ngoại giao).</li>
-                                </ul>
-                            </div>
-                            
-                            <!-- 3b: Quản lý Dự án & Truyền thông --><div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-green-500">
-                                <div class="flex flex-wrap gap-2 mb-2">
-                                    <span class="experience-tag">Tổ chức sự kiện</span>
-                                    <span class="experience-tag">Quản lý Nhân sự</span>
-                                    <span class="experience-tag">Truyền thông Nội bộ</span>
+                                
+                                <!-- 3b: Quản lý Dự án & Truyền thông -->
+                                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-green-500">
+                                    <div class="flex flex-wrap gap-2 mb-2">
+                                        <span class="experience-tag">Tổ chức sự kiện</span>
+                                        <span class="experience-tag">Quản lý Nhân sự</span>
+                                        <span class="experience-tag">Truyền thông Nội bộ</span>
+                                    </div>
+
+                                    <p class="text-lg font-bold text-green-700 mb-1">Head of Communication & HR Lead</p>
+                                    <p class="text-base text-gray-800 font-semibold mb-2">Vai trò: Trưởng ban Tổ chức, Trưởng ban Truyền thông, Trưởng ban Nhân sự</p>
+
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li>
+                                            Chair of the Organizing Committee (Trưởng ban Tổ chức) sự kiện 
+                                            <span class="px-2 py-0.5 bg-green-100 text-green-800 font-semibold rounded-md px-2 rounded-md font-semibold">
+                                                Cửa Sổ Đại Học 2024
+                                            </span>,
+                                            thu hút hơn 300 học sinh cấp 3 tại Hải Phòng.
+                                        </li>
+
+                                        <li>
+                                            Head of Human Resources gen 1 (Trưởng ban Nhân sự đời 1) của 
+                                            <span class="px-2 py-0.5 bg-green-100 text-green-800 font-semibold rounded-md px-2 rounded-md font-semibold">
+                                                The AGEE Project
+                                            </span>
+                                            – sáng kiến toàn quốc về giáo dục giới tính.
+                                        </li>
+
+                                        <li>
+                                            Head of Communication cho nhiều dự án và sáng kiến do sinh viên dẫn dắt.
+                                        </li>
+
+                                        <li>
+                                            Member & collaborator of the Communications and Events Committees cho các chương trình từ cấp trường đến cấp thành phố.
+                                        </li>
+                                    </ul>
                                 </div>
-                                <p class="text-lg font-bold text-green-700 mb-1">Head of Communication & HR Lead</p>
-                                <p class="text-base text-gray-800 font-semibold mb-2">Vai trò: Trưởng ban Tổ chức, Trưởng ban Truyền thông, Trưởng ban Nhân sự</p>
-                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    <li>**Chair of the Organizing Committee** (Trưởng ban Tổ chức) sự kiện **Cửa Sổ Đại Học 2024**, thu hút hơn **300 học sinh cấp 3** trên địa bàn Hải Phòng.</li>
-                                    <li>**Head of Human Resources gen 1** (Trưởng ban Nhân sự đời 1) của **The AGEE Project** - sáng kiến toàn quốc về giáo dục giới tính.</li>
-                                    <li>**Head of Communication** (Trưởng ban Truyền thông) cho nhiều dự án và sáng kiến do sinh viên dẫn dắt.</li>
-                                    <li>**Member & collaborator of the Communications and Events Committees** (Thành viên/Cộng tác viên Ban Truyền thông & Sự kiện) cho nhiều chương trình quy mô từ cấp trường đến cấp thành phố.</li>
-                                </ul>
+
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- 04. Mẫu Sản Phẩm (Work Sample - Video/Content) --><div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500 p-6">
+                <br>
+                <br>
+                <!-- 04. Mẫu Sản Phẩm (Work Sample - Video/Content) -->
+                <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500 p-6">
                     <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">04. Mẫu Sản Phẩm (Work Sample)</h3>
                     <p class="text-sm font-semibold text-indigo-600 mb-6">Các tác phẩm tiêu biểu trong quá trình làm việc và học tập</p>
                     
                     <div class="space-y-8">
-                        
                         <!-- Video Samples -->
                         <div class="border-b pb-4">
                             <h4 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i data-lucide="monitor-play" class="w-5 h-5 text-indigo-500 mr-2"></i> VIDEO & TRUYỀN HÌNH (THP & ELCOM)</h4>
                             <div class="grid md:grid-cols-2 gap-6">
                                 
                                 <!-- Mẫu 1 (THP) -->
-                                <div class="bg-white p-4 rounded-lg shadow-inner">
-                                    <p class="font-bold text-indigo-600 truncate">Đền Hải Phòng, đi lòng vòng: Đền Nghè</p>
-                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Dẫn chương trình, Quay phim, Hậu kỳ</p>
-                                    <p class="text-sm text-gray-700">Phóng sự giới thiệu các di tích văn hóa của Hải Phòng, nhằm xây dựng niềm tự hào địa phương và quảng bá thành phố rộng rãi hơn.</p>
-                                </div>
-                                
-                                <!-- Mẫu 2 (THP) -->
-                                <div class="bg-white p-4 rounded-lg shadow-inner">
-                                    <p class="font-bold text-indigo-600 truncate">Thiếu nhi vui hơn hoa - Góc sống vui của nhiều người dân Hải Phòng</p>
-                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Dẫn chương trình, Phỏng vấn, Biên tập hậu kỳ</p>
-                                    <p class="text-sm text-gray-700">Một đoạn phim ngắn về các hoạt động cộng đồng, được phát sóng trên THP và các nền tảng kỹ thuật số.</p>
-                                </div>
+                                <a href="http://thhp.vn/den-hai-phong-di-long-vong-den-nghe-32613.html" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                h-full flex flex-col">
+                                    <div class="bg-white p-4 rounded-lg shadow-inner h-full flex flex-col">
+                                        <p class="font-bold text-indigo-600 truncate">Đền Hải Phòng, đi lòng vòng: Đền Nghè</p>
+                                        <p class="text-xs text-gray-500 mb-2">Vai trò: Dẫn chương trình, Quay phim, Hậu kỳ</p>
+                                        <p class="text-sm text-gray-700 flex-1">Phóng sự giới thiệu các di tích văn hóa của Hải Phòng, nhằm xây dựng niềm tự hào địa phương và quảng bá thành phố rộng rãi hơn.</p>
+                                    </div>
 
-                                <!-- Mẫu 3 (ELCOM) -->
-                                <div class="bg-white p-4 rounded-lg shadow-inner">
-                                    <p class="font-bold text-indigo-600 truncate">Quốc tế Thiếu nhi 1/6 tại Elcom cơ này</p>
-                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Quay phim, MC, Dựng phim</p>
-                                    <p class="text-sm text-gray-700">Video tổng kết hoạt động và lễ kỷ niệm Ngày Quốc tế Thiếu nhi tại ELCOM.</p>
-                                </div>
-                                
-                                <!-- Mẫu 4 (ELCOM) -->
-                                <div class="bg-white p-4 rounded-lg shadow-inner">
-                                    <p class="font-bold text-indigo-600 truncate">Trung thu ELCOM 2025</p>
-                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Hậu kỳ sản xuất</p>
-                                    <p class="text-sm text-gray-700">Video recap bao gồm quà tặng trung thu và các hoạt động kỷ niệm cho nhân viên ELCOM.</p>
-                                </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Truy cập để xem video →
+                                        </span>
+                                    </div>
+                                </a>
+                                    
+                                    <!-- Mẫu 2 (THP) -->
+                                <a href="http://thhp.vn/den-hai-phong-di-long-vong-den-nghe-32613.html" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                h-full flex flex-col">                                
+                                    <div class="bg-white p-4 rounded-lg shadow-inner h-full flex flex-col">
+                                        <p class="font-bold text-indigo-600 truncate">Thiếu nhi vui hơn hoa - Góc sống vui của nhiều người dân Hải Phòng</p>
+                                        <p class="text-xs text-gray-500 mb-2">Vai trò: Dẫn chương trình, Phỏng vấn, Biên tập hậu kỳ</p>
+                                        <p class="text-sm text-gray-700 flex-1">Một đoạn phim ngắn về các hoạt động cộng đồng, được phát sóng trên THP và các nền tảng kỹ thuật số.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Truy cập để xem video →
+                                        </span>
+                                    </div>
+                                </a>
+
+                                    <!-- Mẫu 3 (ELCOM) -->
+                                <a href="https://www.facebook.com/elcomcareers/videos/qu%E1%BB%91c-t%E1%BA%BF-thi%E1%BA%BFu-nhi-16-t%E1%BA%A1i-elcom-c%E1%BB%A1-n%C3%A0y-elcom-elcomcareers-quoctethieunhi-viral/9955791211163017/?_rdr" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                h-full flex flex-col">
+                                    <div class="bg-white p-4 rounded-lg shadow-inner h-full flex flex-col">
+                                        <p class="font-bold text-indigo-600 truncate">Quốc tế Thiếu nhi 1/6 tại Elcom cỡ này</p>
+                                        <p class="text-xs text-gray-500 mb-2">Vai trò: Quay phim, MC, Dựng phim</p>
+                                        <p class="text-sm text-gray-700 flex-1">Video tổng kết hoạt động và lễ kỷ niệm Ngày Quốc tế Thiếu nhi tại ELCOM.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Truy cập để xem video →
+                                        </span>
+                                    </div>
+                                </a>
+
+                                    <!-- Mẫu 4 (ELCOM) -->
+                                <a href="http://thhp.vn/den-hai-phong-di-long-vong-den-nghe-32613.html" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                h-full flex flex-col">                                
+                                    <div class="bg-white p-4 rounded-lg shadow-inner h-full flex flex-col">
+                                        <p class="font-bold text-indigo-600 truncate">Trung thu ELCOM 2025</p>
+                                        <p class="text-xs text-gray-500 mb-2">Vai trò: Hậu kỳ sản xuất</p>
+                                        <p class="text-sm text-gray-700 flex-1">Video recap bao gồm quà tặng trung thu và các hoạt động kỷ niệm cho nhân viên ELCOM.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Truy cập để xem video →
+                                        </span>
+                                    </div>
+                                </a>
                             </div>
                         </div>
 
@@ -563,36 +751,83 @@
                         <div class="border-b pb-4">
                             <h4 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i data-lucide="file-text" class="w-5 h-5 text-indigo-500 mr-2"></i> BÀI VIẾT & NỘI DUNG (ELCOM & BÁO CHÍ)</h4>
                             <div class="grid md:grid-cols-2 gap-6">
-                                <!-- Mẫu 5 (Báo chí) -->
-                                <div class="bg-white p-4 rounded-lg shadow-inner">
-                                    <p class="font-bold text-indigo-600 truncate">Cùng giới trẻ Việt tiếp câu chuyện hòa bình</p>
-                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Phát triển nội dung, Phỏng vấn, Viết bài</p>
-                                    <p class="text-sm text-gray-700">Bài viết về cách những người trẻ tiếp nhận và quảng bá giá trị văn hóa, được đăng trên YTV News và Kinh Tế & Đô Thị Newspaper.</p>
-                                </div>
-                                <!-- Mẫu 6 (ELCOM) -->
-                                <div class="bg-white p-4 rounded-lg shadow-inner">
-                                    <p class="font-bold text-indigo-600 truncate">The E-Leaders #01: Chị Nguyễn Thị Tươi - “Người xây dựng sức mạnh tập thể” của R&D ELCOM</p>
-                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Phát triển nội dung, Phỏng vấn, Viết bài</p>
-                                    <p class="text-sm text-gray-700">Series tri ân lãnh đạo doanh nghiệp, phỏng vấn và viết bài về vai trò của họ trong công ty.</p>
-                                </div>
-                                <!-- Mẫu 7 (ELCOM) -->
-                                <div class="bg-white p-4 rounded-lg shadow-inner">
-                                    <p class="font-bold text-indigo-600 truncate">ELCOM tổ chức thành công Hội nghị Chiến lược giai đoạn 2026-2030</p>
-                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Chụp ảnh, Biên tập tin tức, Hỗ trợ truyền thông</p>
-                                    <p class="text-sm text-gray-700">Tin tức trên Facebook và Website công ty về sự kiện quan trọng của doanh nghiệp.</p>
-                                </div>
-                                <!-- Mẫu 8 (DAV) -->
-                                <div class="bg-white p-4 rounded-lg shadow-inner">
-                                    <p class="font-bold text-indigo-600 truncate">Trải nghiệm năm nhất tại Học viện Ngoại giao</p>
-                                    <p class="text-xs text-gray-500 mb-2">Vai trò: Tác giả (Sinh viên duy nhất)</p>
-                                    <p class="text-sm text-gray-700">Bài viết cá nhân được đăng trên website chính thức của Học viện Ngoại giao (dưới sự bảo trợ của Bộ Ngoại giao).</p>
-                                </div>
+                                    <!-- Mẫu 5 (Báo chí) -->
+                                <a href="http://thhp.vn/den-hai-phong-di-long-vong-den-nghe-32613.html" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                h-full flex flex-col">                                
+                                    <div class="bg-white p-4 rounded-lg shadow-inner h-full flex flex-col">
+                                        <p class="font-bold text-indigo-600 truncate">Cùng giới trẻ Việt tiếp câu chuyện hòa bình</p>
+                                        <p class="text-xs text-gray-500 mb-2">Vai trò: Phát triển nội dung, Phỏng vấn, Viết bài</p>
+                                        <p class="text-sm text-gray-700 flex-1">Bài viết về cách những người trẻ tiếp nhận và quảng bá giá trị văn hóa, được đăng trên YTV News và Kinh Tế & Đô Thị Newspaper.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Truy cập để xem bài viết →
+                                        </span>
+                                    </div>
+                                </a>
+                                    <!-- Mẫu 6 (ELCOM) -->
+                                <a href="https://www.facebook.com/elcomcareers/posts/-%F0%9D%90%81%F0%9D%90%9A%CC%89%F0%9D%90%A7-%F0%9D%90%AD%F0%9D%90%A2%F0%9D%90%A7-%C4%91%F0%9D%90%9A%CC%80%F0%9D%90%A8-%F0%9D%90%AD%F0%9D%90%9A%CC%A3%F0%9D%90%A8-%F0%9D%90%A7%F0%9D%90%A8%CC%A3%CC%82%F0%9D%90%A2-%F0%9D%90%9B%F0%9D%90%A8%CC%A3%CC%82-%F0%9D%90%84%F0%9D%90%A5%F0%9D%90%9C%F0%9D%90%A8%F0%9D%90%A6-%F0%9D%90%AD%F0%9D%90%A1%F0%9D%90%9A%CC%81%F0%9D%90%A7%F0%9D%90%A0-%F0%9D%9F%8F%F0%9D%9F%90-%F0%9D%90%87%F0%9D%90%A8%CC%A3%F0%9D%90%9C-%F0%9D%90%A1%F0%9D%90%A8%CC%89%F0%9D%90%A2-%F0%9D%90%A4%F0%9D%90%A1%F0%9D%90%A8%CC%82%F0%9D%90%A7%F0%9D%90%A0-%F0%9D%90%A7%F0%9D%90%A0%F0%9D%90%AE%CC%9B%CC%80%F0%9D%90%A7%F0%9D%90%A0-%F0%9D%90%A7%F0%9D%90%A0%F0%9D%90%A1%F0%9D%90%A2%F0%9D%90%9E%CC%82%F0%9D%90%A7-/1169965345130203/" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                h-full flex flex-col">                                
+                                    <div class="bg-white p-4 rounded-lg shadow-inner h-full flex flex-col">
+                                        <p class="font-bold text-indigo-600 truncate">The E-Leaders #01: Chị Nguyễn Thị Tươi - “Người xây dựng sức mạnh tập thể” của R&D ELCOM</p>
+                                        <p class="text-xs text-gray-500 mb-2">Vai trò: Phát triển nội dung, Phỏng vấn, Viết bài</p>
+                                        <p class="text-sm text-gray-700 flex-1">Series tri ân lãnh đạo doanh nghiệp, phỏng vấn và viết bài về vai trò của họ trong công ty.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Truy cập để xem bài viết →
+                                        </span>
+                                    </div>
+                                </a>
+                                    <!-- Mẫu 7 (ELCOM) -->
+                                <a href="https://www.elcom.com.vn/elcom-to-chuc-thanh-cong-hoi-nghi-chien-luoc-giai-doan-2026-2030-1762258135" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                h-full flex flex-col">                                
+                                    <div class="bg-white p-4 rounded-lg shadow-inner h-full flex flex-col">
+                                        <p class="font-bold text-indigo-600 truncate">ELCOM tổ chức thành công Hội nghị Chiến lược giai đoạn 2026-2030</p>
+                                        <p class="text-xs text-gray-500 mb-2">Vai trò: Chụp ảnh, Biên tập tin tức, Hỗ trợ truyền thông</p>
+                                        <p class="text-sm text-gray-700 flex-1">Tin tức trên Facebook và Website công ty về sự kiện quan trọng của doanh nghiệp.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Truy cập để xem bài viết →
+                                        </span>
+                                    </div>
+                                </a>
+                                    <!-- Mẫu 8 (DAV) -->
+                                <a href="https://dav.edu.vn/trai-nghiem-nam-nhat-tai-hoc-vien-ngoai-giao/" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                h-full flex flex-col">                                
+                                    <div class="bg-white p-4 rounded-lg shadow-inner h-full flex flex-col">
+                                        <p class="font-bold text-indigo-600 truncate">Trải nghiệm năm nhất tại Học viện Ngoại giao</p>
+                                        <p class="text-xs text-gray-500 mb-2">Vai trò: Tác giả (Sinh viên duy nhất)</p>
+                                        <p class="text-sm text-gray-700 flex-1">Bài viết cá nhân được đăng trên website chính thức của Học viện Ngoại giao (dưới sự bảo trợ của Bộ Ngoại giao).</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Truy cập để xem bài viết →
+                                        </span>
+                                    </div>
+                                </a>
                             </div>
                         </div>
 
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
