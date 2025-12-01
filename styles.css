@@ -1,0 +1,227 @@
+        /* Thiết lập font Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc; /* Màu nền nhẹ nhàng */
+        }
+        /* Style tùy chỉnh cho hiệu ứng Parallax */
+        #hero-section {
+            /* Hình ảnh nền chuyên nghiệp, mang tính quốc tế */
+            background-image: url('https://images.unsplash.com/photo-1543269865-c3359d9c8efb?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920&h=1080&blend=6366f1&blend-mode=multiply&sat=-20&bri=-30');
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Chiều cao đầy đủ cho phần đầu trang */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Lớp phủ để làm nổi bật văn bản */
+        #hero-overlay {
+            /* Lớp phủ màu Indigo đậm hơn, tăng tính chuyên nghiệp */
+            background-color: rgba(0, 0, 0, 0.65);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Container cho nội dung chính */
+        .content-section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 1.5rem;
+            margin: 2rem auto;
+            max-width: 1280px;
+        }
+
+        /* Hiệu ứng mượt mà cho các phần tử */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            /* Màu sắc hover theo tông Indigo */
+            box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
+        }
+
+        /* Nút cuộn lên đầu */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none; /* Ban đầu ẩn */
+        }
+
+        /* ------------------------------------------- */
+        /* Custom style cho Image Carousel (Slider) */
+        /* ------------------------------------------- */
+        .image-carousel-container {
+            position: relative;
+            max-width: 600px; /* Chiều rộng tối đa cho carousel (có thể điều chỉnh) */
+            margin: 1.5rem auto; /* Căn giữa */
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background-color: #eef2ff; /* indigo-50 */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            height: 300px; /* Chiều cao tổng: ảnh + cap */
+        }
+        
+        /* Container chứa tất cả các slide - dùng để positioning */
+        .carousel-slides {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Hiệu ứng mờ dần */
+        }
+
+        .carousel-slide.active {
+            opacity: 1; /* Slide đang active sẽ hiển thị */
+            z-index: 5;
+        }
+
+        .carousel-image-wrapper {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            z-index: 10; /* Đảm bảo caption nằm trên ảnh */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(calc(-50% - 30px)); /* Điều chỉnh để nằm giữa ảnh, -30px là 1 nửa chiều cao caption */
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            cursor: pointer;
+            padding: 0.75rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            z-index: 15;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-nav-button:hover {
+            background-color: #6366f1; /* indigo-500 */
+            color: white;
+            transform: translateY(calc(-50% - 30px)) scale(1.05);
+        }
+
+        .carousel-nav-button.prev {
+            left: 10px;
+        }
+
+        .carousel-nav-button.next {
+            right: 10px;
+        }
+        
+        /* ------------------------------------------- */
+        /* Custom style cho phần About/Skills mới */
+        /* ------------------------------------------- */
+
+        /* Bối cảnh tổng thể cho phần giới thiệu (About) */
+        #about-content {
+            background-color: #f7fafc; 
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card ID Badge */
+        .id-badge {
+            background-color: #e0e7ff; /* indigo-100 */
+            border-radius: 1.5rem;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .id-badge-header {
+            background-color: #4f46e5; /* indigo-600 */
+            border-radius: 0.75rem 0.75rem 0 0;
+            padding: 0.75rem;
+            color: white;
+            text-align: center;
+            font-weight: 700;
+            margin: -2rem -2rem 1.5rem -2rem; /* Kéo ra ngoài padding */
+        }
+
+        /* Phần thông tin */
+        .info-box {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin-top: 1rem;
+        }
+
+        /* Icon styling */
+        .skill-icon {
+            filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Typography cho phần tiêu đề nhỏ */
+        .section-heading-sm {
+            display: inline-block;
+            background-color: #fcd34d; /* Màu vàng nhạt */
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            color: #475569; /* Xám đậm */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        
+        /* Typography cho các tiêu đề kinh nghiệm bổ sung */
+        .experience-tag {
+            display: inline-block;
+            background-color: #d1fae5; /* green-100 */
+            color: #065f46; /* green-900 */
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem; /* text-sm */
+            margin-bottom: 0.5rem;
+        }
+        /* CSS bổ sung cho các ảnh thẻ của phần Other Experiences */
+            .experience-tag {
+                @apply px-2 py-0.5 text-xs font-semibold rounded-md;
+            }
+            .experience-tag:not(.bg-indigo-100):not(.bg-green-100) {
+                /* Thiết lập màu mặc định cho tag 3b nếu cần */
+                @apply bg-green-100 text-green-900;
+            }

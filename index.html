@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Truyền Thông Quốc Tế</title>
+    <!-- Tải Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Tải biểu tượng Lucide Icons --><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body class="scroll-smooth">
+
+    <!-- Thanh Điều Hướng (Navigation Bar) -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg backdrop-blur-sm bg-opacity-80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#hero-section" class="flex-shrink-0 text-xl font-bold text-indigo-600">
+                    TRA LY VU
+                </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">About</a>
+                        <a href="#skills" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Skills</a>
+                        <a href="#portfolio" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Experience</a>
+                        <a href="#worksample" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Work Sample</a>
+                        <a href="#contact" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Phần Giới Thiệu (Hero Section) -->
+    <section id="hero-section">
+        <div id="hero-overlay" 
+            class="text-center"
+            style="background-image: url('VTL_img/1-bg.png'); 
+                    background-size: cover; 
+                    background-position: center;">
+            
+                <div id="hero-content" class="p-6 rounded-xl bg-black bg-opacity-30">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                    VU TRA LY
+                </h1>
+
+                <p class="mt-2 text-xl md:text-2xl font-light text-indigo-300">
+                    International Communication Student | DAV
+                </p>
+
+                <div class="mt-6">
+                    <a href="#portfolio" 
+                    class="inline-flex items-center justify-center px-6 py-2 text-base font-medium 
+                            rounded-full text-white bg-indigo-600 hover:bg-indigo-700 
+                            shadow-lg transform transition duration-300 hover:scale-105">
+                        View My Experiences
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 2. Phần Giới Thiệu Bản Thân (About Me) -->
+<section id="about" class="content-section bg-white">
+    <div class="mx-auto max-w-7xl px-4">
+
+        <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">
+            About Me
+        </h2>
+
+        <div id="about-content" class="grid lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-1 space-y-6">
+                
+                <div class="id-badge rounded-xl shadow-md bg-white">
+                    <div class="bg-indigo-600 text-white text-center py-3 rounded-t-xl">
+                        <span class="text-xl font-semibold tracking-wide">PERSONAL ID</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="flex flex-col items-center py-6 px-4">
+                        <img src="VTL_img/1.png" 
+                             alt="Ảnh Chân Dung" 
+                             class="rounded-xl w-44 h-44 object-cover border-4 border-white shadow-xl -mt-12 mb-4">
+
+                        <h3 class="text-2xl font-bold text-gray-900">TRA LY VU</h3>
+                        <p class="text-sm font-medium text-indigo-600">
+                            I’d love to be called “Teacup”
+                        </p>
+                    </div>
+
+                    <div class="info-box px-6 pb-6">
+                        <p class="text-sm text-gray-500 font-semibold mb-1">D.O.B:</p>
+                        <p class="text-base font-bold text-gray-800">15/08/2005</p>
+
+                        <div class="h-px bg-gray-200 my-3"></div>
+
+                        <p class="text-sm text-gray-500 font-semibold mb-1">Email:</p>
+                        <p class="text-base font-bold text-indigo-600 break-all">
+                            teacup.dav@gmail.com
+                        </p>
+
+                        <div class="h-px bg-gray-200 my-3"></div>
+
+                        <p class="text-sm text-gray-500 font-semibold mb-1">Mobile:</p>
+                        <p class="text-base font-bold text-gray-800">(+84) 93 1157 859</p>
+                    </div>
+                </div>
+
+                <div class="info-box bg-white p-6 rounded-xl shadow-lg">
+                    <span class="section-heading-sm bg-yellow-300 px-3 py-1 rounded-md text-gray-800 font-bold text-sm">EDUCATION</span>
+                    
+                    <div class="mt-3 space-y-4">
+                        <div class="flex items-start justify-between gap-4"> 
+                            <div class="flex-grow">
+                                <p class="text-lg font-bold text-indigo-700">2023 - Now</p>
+                                <p class="text-gray-800 font-semibold">
+                                    Diplomatic Academy of Vietnam (DAV)
+                                </p>
+                                <p class="text-sm text-gray-600">International Communication</p>
+                            </div>
+                            <div class="flex-shrink-0 w-14 h-12 flex items-center justify-center">
+                                <img src="VTL_img/dav_logo.png" 
+                                    alt="DAV Logo" 
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <hr class="border-gray-200"> <div class="flex items-start justify-between gap-4">
+                            <div class="flex-grow">
+                                <p class="text-lg font-bold text-indigo-700">2020 - 2023</p>
+                                <p class="text-gray-800 font-semibold">
+                                    Tran Phu High School for the Gifted (Hai Phong)
+                                </p>
+                                <p class="text-sm text-gray-600">Literature Specialized</p>
+                            </div>
+                            <div class="flex-shrink-0 w-14 h-12 flex items-center justify-center">
+                                <img src="VTL_img/tp_logo.png" 
+                                    alt="Tran Phu Logo" 
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 space-y-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                    <h3 class="text-3xl font-extrabold text-indigo-600 mb-4">
+                        Responsible. Proactive. Empathic.
+                    </h3>
+
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                    As a proactive International Communication student with a strong academic foundation and hands-on media experience,
+                    I aim to grow in storytelling-driven communication that captures authentic moments and builds meaningful connections. 
+                    I approach my work with curiosity and intention, always seeking opportunities to learn and contribute through each project.
+                    </p>
+                </div>
+
+                <div id="skills" class="space-y-6">
+                    <h4 class="text-2xl font-bold text-gray-800 mt-8 mb-4">
+                        Skills
+                    </h4>
+
+                    <div class="grid md:grid-cols-2 gap-6 items-stretch"> 
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-emerald-500 flex flex-col">
+                            <span class="section-heading-sm bg-emerald-200 text-emerald-800">
+                                Core Skills
+                            </span>
+
+                            <ul class="list-none space-y-2 text-gray-700 mt-3 flex-grow">
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Photography (Field & Event)
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Videography (Filming, Interview Recording)
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Video Editing
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Content Production (Short-form & Long-form)
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Storytelling & Visual narrative
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 mr-2"></i> 
+                                    Journalism / Field Reporting
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-orange-500 flex flex-col">
+                            <span class="section-heading-sm bg-orange-200 text-orange-800">
+                                Soft Skills
+                            </span>
+                            <ul class="list-none space-y-2 text-gray-700 mt-3 flex-grow">
+                                <li class="flex items-center"><i data-lucide="user-check" class="w-5 h-5 text-orange-500 mr-2"></i> Communication & Teamwork</li>
+                                <li class="flex items-center"><i data-lucide="clipboard-list" class="w-5 h-5 text-orange-500 mr-2"></i> Detail-oriented</li>
+                                <li class="flex items-center"><i data-lucide="zap" class="w-5 h-5 text-orange-500 mr-2"></i> Adaptability & Fieldwork readliness</li>
+                                <li class="flex items-center"><i data-lucide="clock" class="w-5 h-5 text-orange-500 mr-2"></i> Time Management</li>
+                                <li class="flex items-center"><i data-lucide="brain" class="w-5 h-5 text-orange-500 mr-2"></i> Problem Solving</li>
+                                <li class="flex items-center"><i data-lucide="heart" class="w-5 h-5 text-orange-500 mr-2"></i> Empathy in Storytelling</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 items-stretch">  
+                        <div class="info-box bg-white p-6 pb-8 rounded-xl shadow-md"> 
+                            <span class="section-heading-sm bg-yellow-300">Languages</span>
+                            <ul class="list-none space-y-4 text-gray-700 mt-3 flex-grow text-lg">
+                                <li class="flex justify-between items-center">
+                                    <span>Vietnamese: <span class="text-indigo-800 font-semibold">Native</span></span>
+                                    <img src="VTL_img/flags/vietnam.png" class="w-12 h-8 object-cover border border-gray-300">
+                                </li>
+                                <li class="flex justify-between items-center">
+                                    <span>English: <span class="text-indigo-800 font-semibold">Fluent</span></span>
+                                    <img src="VTL_img/flags/uk.png" class="w-12 h-8 object-cover border border-gray-300">
+                                </li>
+                                <li class="flex justify-between items-center">
+                                    <span>Chinese: <span class="text-indigo-800 font-semibold">Basic</span></span>
+                                    <img src="VTL_img/flags/china.png" class="w-12 h-8 object-cover border border-gray-300">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="info-box bg-white p-6 rounded-xl shadow-md"> 
+                            <span class="section-heading-sm bg-yellow-300">Software Tools</span>  
+
+                            <div class="grid grid-cols-2 gap-3 mt-3"> 
+                                <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm h-16">
+                                    <img src="VTL_img/tools/capcut.png" class="w-12 h-12 object-contain">
+                                </div>
+                                
+                                <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm h-16">
+                                    <img src="VTL_img/tools/canva.png" class="w-12 h-12 object-contain">
+                                </div>
+                                
+                                <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm h-16">
+                                    <img src="VTL_img/tools/pr.png" class="w-12 h-12 object-contain">
+                                </div>
+                                
+                                <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm h-16">
+                                    <img src="VTL_img/tools/office365.png" class="w-12 h-12 object-contain">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- 4. Phần Kinh Nghiệm & Thành Tựu (Experiences) -->
+    <section id="portfolio" class="content-section bg-white">
+        <div class="mx-auto max-w-5xl px-4">
+            <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">Experiences</h2>
+            <div class="grid md:grid-cols-1 gap-10">
+                
+                <!-- Kinh nghiệm 1: THP -->
+                 <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">01. Intern - Hai Phong Newspaper - Radio and Television (THP)</h3>
+                        <p class="text-sm font-semibold text-indigo-600 mb-4">Role: Intern in Television & Journalism</p>
+                        <p class="text-gray-600 mb-4">Participated in the news production process from fieldwork to post-production, serving as a presenter and field reporter.</p>
+                        
+                        <!-- Image Carousel Container cho THP -->
+                        <div id="thp-carousel-container" class="image-carousel-container">
+                            <div id="thp-carousel-slides" class="carousel-slides">
+                                <!-- Slides sẽ được render bằng JS -->
+                            </div>
+                            <!-- Nút điều hướng -->
+                            <button class="carousel-nav-button prev" onclick="navigateCarousel('thp', -1)">
+                                <i data-lucide="chevron-left" class="w-6 h-6 text-gray-800"></i>
+                            </button>
+                            <button class="carousel-nav-button next" onclick="navigateCarousel('thp', 1)">
+                                <i data-lucide="chevron-right" class="w-6 h-6 text-gray-800"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Các output/thành tựu --><div class="grid grid-cols-3 gap-4 mt-6">
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">20+</p>
+                                <p class="text-xs text-indigo-900">broadcasts as an on-air presenter/news anchor</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">15+</p>
+                                <p class="text-xs text-indigo-900">field-report videos, participating in filming, interview-ing, and on-site coverage</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">20+</p>
+                                <p class="text-xs text-indigo-900">edited pieces, ranging from short news clips to 15-minute programs</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">5+</p>
+                                <p class="text-xs text-indigo-900">studio talk sessions with guest interactions</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Kinh nghiệm 2: ELCOM -->
+                 <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">02. Communications Intern - ELCOM CORPORATION</h3>
+                        <p class="text-sm font-semibold text-indigo-600 mb-4">Vai trò: Thực tập sinh Truyền thông Nội bộ & Sự kiện</p>
+                        <p class="text-gray-600 mb-4">Chịu trách nhiệm sản xuất nội dung đa kênh, quản lý truyền thông nội bộ và dẫn dắt các sự kiện quan trọng của công ty.</p>
+                        
+                        <!-- Image Carousel Container cho ELCOM -->
+                        <div id="elcom-carousel-container" class="image-carousel-container">
+                            <div id="elcom-carousel-slides" class="carousel-slides">
+                                <!-- Slides sẽ được render bằng JS -->
+                            </div>
+                            <!-- Nút điều hướng -->
+                            <button class="carousel-nav-button prev" onclick="navigateCarousel('elcom', -1)">
+                                <i data-lucide="chevron-left" class="w-6 h-6 text-gray-800"></i>
+                            </button>
+                            <button class="carousel-nav-button next" onclick="navigateCarousel('elcom', 1)">
+                                <i data-lucide="chevron-right" class="w-6 h-6 text-gray-800"></i>
+                            </button>
+                        </div>
+
+                        <!-- Các output/thành tựu - 6 ô --><div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">30+</p>
+                                <p class="text-xs text-indigo-900">short-form videos produced and published across internal communication channels and the company’s recruitment platforms</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">35+</p>
+                                <p class="text-xs text-indigo-900">content pieces created and published across corporate channels</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">20+</p>
+                                <p class="text-xs text-indigo-900">employee interviews conducted and featured in internal communication articles</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">20+</p>
+                                <p class="text-xs text-indigo-900">communication materials designed and distributed across internal platforms</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">15+</p>
+                                <p class="text-xs text-indigo-900">photography assignments completed for internal training sessions and corporate events</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">10+</p>
+                                <p class="text-xs text-indigo-900">occasions serving as a member of the organizing committee for internal and external corporate events</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">08+</p>
+                                <p class="text-xs text-indigo-900">new communication series conceptualized and launched</p>
+                            </div>
+                            <div class="bg-indigo-100 p-3 rounded-lg text-center">
+                                <p class="text-2xl font-extrabold text-indigo-700">05+</p>
+                                <p class="text-xs text-indigo-900">times serving as Master of Ceremonies (MC) for internal company programs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <!-- Kinh nghiệm 3: Các kinh nghiệm khác -->
+                    <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800">03. Other Experiences</h3>
+                            <p class="text-sm font-semibold text-indigo-600 mb-6">Extracurricular Activities & Community Project Leadership</p>
+                            
+                            <div class="space-y-6">
+                                
+                                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-indigo-500">
+                                    <div class="flex flex-wrap gap-2 mb-2">
+                                        <span class="experience-tag bg-indigo-100 text-indigo-900">Communication Ambassador</span>
+                                        <span class="experience-tag bg-indigo-100 text-indigo-900">Scientific Research</span>
+                                        <span class="experience-tag bg-indigo-100 text-indigo-900">Outstanding Student</span>
+                                    </div>
+
+                                    <p class="text-lg font-bold text-indigo-700 mb-1">Communication Ambassador & Team Leader</p>
+                                    <p class="text-base text-gray-800 font-semibold mb-2">Role: Student Representative, Research Team Leader</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li>Communication Ambassador for over 10+ events and youth organizations, enhancing project visibility and outreach.</li>
+                                        <li>Outstanding Student of the Diplomatic Academy in 2024, supporting admissions and talent recruitment for the Academy.</li>
+                                        <li>Team Leader of a scientific research project awarded 
+                                            <span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 font-semibold rounded-md">
+                                                Third Prize at the Faculty level in the iQuest 2025 competition
+                                            </span>.
+                                        </li>
+                                        <li>Only student with 
+                                            <span class="px-2 py-0.5 bg-indigo-100 text-indigo-700 font-semibold rounded-md">
+                                                2 personal articles published on the official website of the Diplomatic Academy
+                                            </span>
+                                            (under the sponsorship of the Ministry of Foreign Affairs).
+                                        </li>
+                                    </ul>
+
+                                    <div class="mt-4">
+                                        <div id="carousel-3a" class="relative">
+                                            <div class="overflow-hidden rounded-lg shadow-inner">
+                                                <div id="track-3a" class="flex transition-transform duration-500 ease-in-out" style="transform: translateX(0%);">
+                                                    
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3a Image 1" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3a Image 2" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3a Image 3" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3a Image 4" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3a Image 5" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3a Image 6" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3a Image 7" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3a Image 8" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                            <button id="prev-3a" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-900 bg-opacity-50 text-white p-2 rounded-full shadow-lg hover:bg-opacity-75 transition z-10 opacity-50 cursor-not-allowed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                                </svg>
+                                            </button>
+                                            
+                                            <button id="next-3a" class="absolute right-0 top-1/2 -translate-y-1/2 bg-indigo-500 bg-opacity-90 text-white p-2 rounded-full shadow-lg hover:bg-indigo-700 transition z-10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-green-500">
+                                    <div class="flex flex-wrap gap-2 mb-2">
+                                        <span class="experience-tag">Event Organization</span>
+                                        <span class="experience-tag">Human Resources Management</span>
+                                        <span class="experience-tag">Internal Communication</span>
+                                    </div>
+
+                                    <p class="text-lg font-bold text-green-700 mb-1">Head of Communication & HR Lead</p>
+                                    <p class="text-base text-gray-800 font-semibold mb-2">Role: Head of Organization, Head of Communication, Head of Human Resources</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li>
+                                            Chair of the Organizing Committee
+                                            <span class="px-2 py-0.5 bg-green-100 text-green-800 font-semibold rounded-md">
+                                                Cửa Sổ Đại Học 2024
+                                            </span>,
+                                            attracting over 300 high school students in Hai Phong.
+                                        </li>
+                                        <li>
+                                            Head of Human Resources gen 1
+                                            <span class="px-2 py-0.5 bg-green-100 text-green-800 font-semibold rounded-md">
+                                                The AGEE Project
+                                            </span>
+                                            – a nationwide initiative on sex education for adolescents.
+                                        </li>
+                                        <li>
+                                            Head of Communication for various student-led projects and initiatives.
+                                        </li>
+                                        <li>
+                                            Member & collaborator of the Communications and Events Committees for programs from the school to the city level.
+                                        </li>
+                                    </ul>
+
+                                    <div class="mt-4">
+                                        <div id="carousel-3b" class="relative">
+                                            <div class="overflow-hidden rounded-lg shadow-inner">
+                                                <div id="track-3b" class="flex transition-transform duration-500 ease-in-out" style="transform: translateX(0%);">
+                                                    
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 1" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 2" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 3" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 4" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 5" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 6" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 7" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    <div class="flex-shrink-0 w-1/4 p-1">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 8" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                            <button id="prev-3b" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-900 bg-opacity-50 text-white p-2 rounded-full shadow-lg hover:bg-opacity-75 transition z-10 opacity-50 cursor-not-allowed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                                </svg>
+                                            </button>
+                                            
+                                            <button id="next-3b" class="absolute right-0 top-1/2 -translate-y-1/2 bg-green-500 bg-opacity-90 text-white p-2 rounded-full shadow-lg hover:bg-green-700 transition z-10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <!-- 04. Mẫu Sản Phẩm (Work Sample - Video/Content) -->
+                <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500 p-6" id="worksample">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">04. Work Sample (Video/Content)</h3>
+                    <p class="text-sm font-semibold text-indigo-600 mb-6">Notable works during work and study</p>
+                    
+                    <div class="space-y-8">
+                        <!-- Video Samples -->
+                        <div class="border-b pb-4">
+                            <h4 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i data-lucide="monitor-play" class="w-5 h-5 text-indigo-500 mr-2"></i> VIDEO & TELEVISION (THP & ELCOM)</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                
+                                <!-- Mẫu 1 (THP) -->
+                                <a href="http://thhp.vn/den-hai-phong-di-long-vong-den-nghe-32613.html" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/bg-template.png" 
+                                            alt="Thumbnail Đến Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Đến Hải Phòng, đi lòng vòng: Đền Nghè</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Content scripting, on-screen host/experience lead , host-production editing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A feature introducing iconic cultural spots in Hai Phong, created to build local pride and promote the city to wider audiences.</p>
+                                    </div>
+
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to watch video →
+                                        </span>
+                                    </div>
+                                </a>
+                                    
+                                    <!-- Mẫu 2 (THP) -->
+                                <a href="https://www.facebook.com/reel/1033367111306443" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/khieuvu.png"
+                                            alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Khiêu vũ vườn hoa - Góc sống vui của nhiều người dân Hải Phòng</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Content scripting, on-screen host, participant interviews, post-production editing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A short experiential piece showcasing community activities, broadcast on THP Television and its digital platforms.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to watch video →
+                                        </span>
+                                    </div>
+                                </a>
+
+                                    <!-- Mẫu 3 (ELCOM) -->
+                                <a href="https://www.facebook.com/elcomcareers/videos/qu%E1%BB%91c-t%E1%BA%BF-thi%E1%BA%BFu-nhi-16-t%E1%BA%A1i-elcom-c%E1%BB%A1-n%C3%A0y-elcom-elcomcareers-quoctethieunhi-viral/9955791211163017/?_rdr" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/22.png" 
+                                            alt="Quốc tế Thiếu nhi 1/6 tại Elcom cỡ này"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Quốc tế Thiếu nhi 1/6 tại Elcom cỡ này</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Filming, on-screen presence, post-production editing.</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A recap video capturing the activities and celebrations for International Children’s Day at ELCOM.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to view the video →
+                                        </span>
+                                    </div>
+                                </a>
+
+                                    <!-- Mẫu 4 (ELCOM) -->
+                                <a href="https://thhp.vn/ngay-nua-de-yeu-thuong-mang-yeu-thuong-den-voi-trung-tam-nuoi-duong-bao-tro-xa-hoi-hai-phong-31896.html" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/23.png" 
+                                            alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Ngày nữa để yêu thương: Mang yêu thương đến với Trung tâm Nuôi dưỡng Bảo trợ xã hội Hải Phòng</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Field crew support, interview question design, on-site interviews, rough-cut editing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A human-interest news feature portraying difficult life stories and the compassionate support activities.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to view the video →
+                                        </span>
+                                    </div>
+                                </a>
+                                <!-- Mẫu 5 (ELCOM) -->
+                                <a href="https://www.facebook.com/reel/668343582625550" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/gene.png" 
+                                            alt="Quốc tế Thiếu nhi 1/6 tại Elcom cỡ này"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Lộ trình “cất cánh” của E-GEN Season 3 có gì đặc biệt?</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Filming, on-screen presence, post-production editing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A video introducing the journey, roadmap, and key milestones of E-GEN Season 3 internship program.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to view the video →
+                                        </span>
+                                    </div>
+                                </a>
+
+                                    <!-- Mẫu 6 (ELCOM) -->
+                                <a href="https://youtube.com/shorts/g7r0n8gqMwE?si=sOLitwO6ViEMJwKe" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/trungthu.png" 
+                                            alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Trung thu ELCOM 2025</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Post-production editing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description:  A recap video covering the Mid-Autumn gift-giving event for ELCOM employees</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to view the video →
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Content Samples -->
+                        <div class="border-b pb-4">
+                            <h4 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i data-lucide="file-text" class="w-5 h-5 text-indigo-500 mr-2"></i> ARTICLES AND CONTENTS (ELCOM AND NEWSPAPERS)</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                    <!-- Mẫu 5 (Báo chí) -->
+                                <a href="https://kinhtedothi.vn/cung-gioi-tre-viet-tiep-cau-chuyen-van-hoa.745083.html" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/18.png" 
+                                            alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Cùng giới trẻ viết tiếp câu chuyện hòa bình</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Content development, interview preparation, contacting sources, field photos & videos, article writing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A feature article on how young people embrace and promote cultural values; published on VTV News and Kinh Te & Do Thi Newspaper.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to view the article →
+                                        </span>
+                                    </div>
+                                </a>
+                                    <!-- Mẫu 6 (ELCOM) -->
+                                <a href="https://vtv.vn/xa-hoi/theo-chan-dai-ta-nguyen-duc-luan-ve-mien-ky-uc-khang-chien-2025043017040165.htm" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/19.png" 
+                                            alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Theo chân Đại tá Nguyễn Đức Luận về miền ký ức kháng chiến</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Content development, interview design, supporting video editing, article writing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A commemorative article for April 30th, honoring war heroes through the personal recollections of the featured veteran.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to view the article →
+                                        </span>
+                                    </div>
+                                </a>
+                                    <!-- Mẫu 7 (DAV) -->
+                                <a href="https://dav.edu.vn/trai-nghiem-nam-nhat-tai-hoc-vien-ngoai-giao/" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/20.png" 
+                                            alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Trải nghiệm năm nhất tại Học viện Ngoại giao</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Author</p>
+                                        <p class="text-sm text-gray-700 flex-1">Representative Student of the Diplomatic Academy of Vietnam 2024, supporting and guiding high school seniors in identifying the most suitable university environment, contributing to talent attraction for the Academy.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to view the article →
+                                        </span>
+                                    </div>
+                                </a>
+                                <!-- Mẫu 8 (DAV) -->
+                                <a href="https://dav.edu.vn/cau-chuyen-van-hoa-va-truyen-thong/" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/cauchuyenvanhoa.png" 
+                                            alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Câu chuyện văn hóa và truyền thông</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Author</p>
+                                        <p class="text-sm text-gray-700 flex-1">The only student with two personal feature articles published on the official website of the Diplomatic Academy of Vietnam (under the Ministry of Foreign Affairs): Câu chuyện văn hóa và truyền thông; Trải nghiệm năm nhất tại Học viện Ngoại giao.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to view the article →
+                                        </span>
+                                    </div>
+                                </a>
+                                <!-- Mẫu 9 (ELCOM) -->
+                                <a href="https://www.elcom.com.vn/elcom-to-chuc-thanh-cong-hoi-nghi-chien-luoc-giai-doan-2026-2030-1762258135" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/21.png" 
+                                            alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">ELCOM tổ chức thành công Hội nghị Chiến lược giai đoạn 2026-2030</p>
+                                        <p class="text-xs text-gray-500 mb-2">Vai trò: Chụp ảnh, Biên tập tin tức, Hỗ trợ truyền thông</p>
+                                        <p class="text-sm text-gray-700 flex-1">Tin tức trên Facebook và Website công ty về sự kiện quan trọng của doanh nghiệp.</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to view the article →
+                                        </span>
+                                    </div>
+                                </a>
+                                <!-- Mẫu 10 (ELCOM) -->
+                                <a href="https://www.facebook.com/share/p/1PH2BH3Mir/" 
+                                target="_blank"
+                                class="block relative group hover:scale-[1.02] transition duration-300
+                                shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-xl relative h-full">
+                                    <div class="relative overflow-hidden aspect-[16/9]">
+                                        <img src="VTL_img/Nghean.png" 
+                                            alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
+                                        </div>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Title: Nhìn lại hành trình “Tử Tế” của ELCOMers tại Nghệ An</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: ...</p>
+                                        <p class="text-sm text-gray-700 flex-1">....</p>
+                                    </div>
+                                    <div class="absolute inset-0 bg-black bg-opacity-40 rounded-lg 
+                                                flex items-center justify-center opacity-0 
+                                                group-hover:opacity-100 transition duration-300">
+                                        <span class="text-white font-semibold text-sm">
+                                            Access to view the article →
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Additional Video Production Projects -->
+                        <div class="border-b pb-4">
+                            <h4 class="text-xl font-bold text-gray-700 mb-4 flex items-center">
+                                <i data-lucide="file-text" class="w-5 h-5 text-indigo-500 mr-2"></i>
+                                ADDITIONAL VIDEO PRODUCTION PROJECTS
+                            </h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+
+                                <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
+                                    <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
+                                        <iframe 
+                                            class="w-full h-full object-cover" 
+                                            src="https://www.youtube.com/embed/yjPBqGJeVOg?si=RTfl7c5qNxTAUmlg&autoplay=0" 
+                                            title="YouTube video player" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                            referrerpolicy="strict-origin-when-cross-origin" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Quá trình vận dụng Tư tưởng Hồ Chí Minh vào ngoại giao Việt Nam</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Researching and curating sources, video editing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A documentary-style synthesis outlining Vietnam’s diplomatic evolution and the key lessons drawn from Ho Chi Minh’s ideology across major historical phases.</p>
+                                    </div>
+                                </div>
+
+                                <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
+                                    <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
+                                        <iframe
+                                        class="w-full h-full object-cover"
+                                        src="https://www.youtube.com/embed/vLEzbb1CAQU?si=d7O8CxzedeR78p1I" 
+                                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Phóng sự làm bánh mì tại Ukraine</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Script revision, voice-over recording, source selection, full video editing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A class assignment; the only student video praised by the lecturer and awarded bonus points.</p>
+                                    </div>
+                                </div>
+
+                                <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
+                                    <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
+                                        <iframe
+                                        class="w-full h-full object-cover"
+                                        src="https://www.youtube.com/embed/utCjB0RbmRc?si=14Oygvq1AXEAndza" 
+                                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Phóng sự “Hà Nội buổi ban mai”</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Scripting, filming, source selection, full video editing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A class reportage assignment portraying early-morning life in Hanoi.</p>
+                                    </div>
+                                </div>
+
+                                <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
+                                    <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
+                                        <iframe
+                                        class="w-full h-full object-cover"
+                                        src="https://www.youtube.com/embed/utCjB0RbmRc?si=14Oygvq1AXEAndza"
+                                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                    <div class="p-4 flex flex-col flex-1">
+                                        <p class="font-bold text-indigo-600 truncate">Phóng sự “Hà Nội buổi ban mai”</p>
+                                        <p class="text-xs text-gray-500 mb-2">Role: Scripting, filming, source selection, full video editing</p>
+                                        <p class="text-sm text-gray-700 flex-1">Description: A class reportage assignment portraying early-morning life in Hanoi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Phần Liên Hệ (Contact) -->
+    <section id="contact" 
+            class="content-section bg-gray-100 relative"
+            style="background-image: url('VTL_img/bg-template.png');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;">
+
+        <!-- lớp mờ để chữ dễ nhìn -->
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+
+        <div class="relative mx-auto max-w-xl px-4 py-10">
+            <h2 class="text-4xl font-bold text-gray-100 mb-12 text-center border-b-4 border-indigo-400 pb-3 inline-block mx-auto">
+                Contact Me
+            </h2>
+
+            <div class="bg-white p-8 rounded-xl shadow-2xl space-y-6">
+                <p class="text-center text-gray-600">
+                    I am always open to international collaboration opportunities, project communication, or positions related to public relations.
+                </p>
+                
+                <div class="flex justify-center space-x-6">
+                    <a href="mailto:contact@example.com" class="text-gray-700 hover:text-indigo-600 transition duration-150">
+                        <i data-lucide="mail" class="w-8 h-8"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600 transition duration-150">
+                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600 transition duration-150">
+                        <i data-lucide="facebook" class="w-8 h-8"></i>
+                    </a>
+                </div>
+
+                <div class="text-center text-lg font-medium text-gray-800">
+                    <p>Email: <a href="mailto:teacup.dav@gmail.com" class="text-indigo-600 hover:underline">teacup.dav@gmail.com</a></p>
+                    <p>Phone: (84) 93 1157 859</p>
+                </div>
+
+                <a href="https://placehold.co/1000x800/4338CA/FFFFFF?text=Tải+Về+CV" 
+                download
+                class="block w-full text-center mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-full shadow-xl transition duration-300">
+                    Download CV (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer --><footer class="bg-gray-800 text-white mt-8 py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 TRA LY VU. <span class="text-indigo-400"></span></p>
+        </div>
+    </footer>
+
+    <!-- Nút Cuộn Lên Đầu Trang --><button id="back-to-top" class="bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition duration-300">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+</body>
+</html>
