@@ -1,5 +1,61 @@
         // Khởi tạo icons của Lucide
-        lucide.createIcons();
+                lucide.createIcons();
+
+        // Initialize AOS, Typed.js, VanillaTilt and GLightbox when available
+                function initializeEffects() {
+                    // AOS (Animate On Scroll) - gentle settings
+                    if (window.AOS) {
+                        AOS.init({ once: true, duration: 700, easing: 'ease-out-quart', offset: 120 });
+                    }
+
+                    // Typed.js for hero subtitle — multiple strings, slower typing
+                    if (window.Typed && document.getElementById('typed-subtitle')) {
+                        try {
+                            new Typed('#typed-subtitle', {
+                                strings: ['International Communication Student | DAV', 'Storyteller • Videographer • Writer', 'Field Reporter • Content Producer'],
+                                typeSpeed: 70,
+                                backSpeed: 40,
+                                backDelay: 2200,
+                                loop: true,
+                                smartBackspace: true,
+                                showCursor: true
+                            });
+                        } catch (e) {
+                            console.warn('Typed.js init failed', e);
+                        }
+                    }
+
+                    // VanillaTilt for elements with data-tilt (gentle)
+                    if (window.VanillaTilt) {
+                        VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
+                            max: 4,
+                            speed: 300,
+                            glare: false,
+                            'max-glare': 0.05,
+                            scale: 1.005
+                        });
+                    }
+
+                    // Attach GLightbox to video-overlay buttons (dynamic lightbox)
+                    document.querySelectorAll('.video-overlay').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const src = btn.getAttribute('data-video-src');
+                            if (!src) return;
+
+                            // Create a temporary GLightbox instance for this video
+                            try {
+                                const instance = GLightbox({
+                                    elements: [{ href: src, type: 'video' }]
+                                });
+                                instance.open();
+                            } catch (err) {
+                                // Fallback: open in new tab/window
+                                window.open(src, '_blank');
+                            }
+                        });
+                    });
+                }
 
         // ----------------------------------------------------------------------
         // 1. Logic cho Image Carousel (Slider) - Đã thêm hiệu ứng Transition
@@ -82,10 +138,23 @@
         }
 
         // Hàm khởi tạo tất cả carousels
+        let carouselIntervals = {};
+        function startCarouselAutoplay(id, ms = 5000) {
+            if (carouselIntervals[id]) clearInterval(carouselIntervals[id]);
+            carouselIntervals[id] = setInterval(() => navigateCarousel(id, 1), ms);
+        }
+        function stopCarouselAutoplay(id) {
+            if (carouselIntervals[id]) clearInterval(carouselIntervals[id]);
+        }
+
         function initializeCarousels() {
             renderCarousel('thp');
             renderCarousel('elcom');
-            
+
+            // Start autoplay for both carousels
+            startCarouselAutoplay('thp', 4500);
+            startCarouselAutoplay('elcom', 4500);
+
             // Khởi tạo lại icons sau khi nội dung động được thêm vào
             lucide.createIcons();
         }
@@ -104,21 +173,25 @@
             const scrollPosition = window.pageYOffset;
 
             // Hiệu ứng dịch chuyển cho background (Parallax)
-            heroSection.style.backgroundPositionY = `${-scrollPosition * 0.5}px`;
+            if (heroSection) heroSection.style.backgroundPositionY = `${-scrollPosition * 0.5}px`;
 
             // Hiệu ứng mờ dần cho nội dung
-            const opacity = 1 - (scrollPosition / 500); 
-            heroContent.style.opacity = opacity < 0 ? 0 : opacity;
-            
-            // Hiệu ứng scale (phóng to/thu nhỏ)
-            const scale = 1 - (scrollPosition * 0.0005);
-            heroContent.style.transform = `scale(${scale < 0.8 ? 0.8 : scale})`;
-            
+            if (heroContent) {
+                const opacity = 1 - (scrollPosition / 500);
+                heroContent.style.opacity = opacity < 0 ? 0 : opacity;
+
+                // Hiệu ứng scale (phóng to/thu nhỏ)
+                const scale = 1 - (scrollPosition * 0.0005);
+                heroContent.style.transform = `scale(${scale < 0.8 ? 0.8 : scale})`;
+            }
+
             // Hiển thị/Ẩn nút Back-to-Top
-            if (window.pageYOffset > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
+            if (backToTopButton) {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
             }
         });
 
@@ -136,8 +209,19 @@
                 });
             });
         });
-        // Chạy khởi tạo carousel khi trang tải xong
-        window.addEventListener('load', initializeCarousels);
+        // Chạy khởi tạo carousel và effects khi trang tải xong
+        window.addEventListener('load', () => {
+            initializeCarousels();
+            initializeEffects();
+            // Ensure AOS recalculates positions after dynamic content added
+            if (window.AOS && typeof AOS.refresh === 'function') {
+                setTimeout(() => AOS.refresh(), 120);
+            }
+            // Fallback: if AOS doesn't trigger immediately, add a small class to animate hero images
+            setTimeout(() => {
+                document.querySelectorAll('.hero-img').forEach(el => el.classList.add('hero-init'));
+            }, 250);
+        });
 
         // Hàm thiết lập logic Carousel cho từng mục của Other experiences
         function setupCarousel(id) {

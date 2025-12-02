@@ -225,3 +225,109 @@
                 /* Thiết lập màu mặc định cho tag 3b nếu cần */
                 @apply bg-green-100 text-green-900;
             }
+        /* ----------------------- */
+        /* Video overlay / play UI */
+        /* ----------------------- */
+        .video-overlay {
+            background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.25));
+            transition: transform 0.18s ease, opacity 0.18s ease;
+        }
+        .block.group:hover .video-overlay {
+            transform: scale(1.02);
+            opacity: 1;
+        }
+        .video-overlay svg {
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25));
+        }
+
+        /* Subtle card hover lift for thumbnails */
+        .block.group {
+            transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s ease;
+        }
+        /* Only a subtle lift (no scaling) to avoid enlarging whole sections */
+        .block.group:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(16,24,40,0.08);
+        }
+
+        /* Disable scale transforms for blocks inside these major sections to be safe
+           (overrides inline Tailwind hover:scale classes) */
+        #portfolio .block.group:hover,
+        #worksample .block.group:hover,
+        #about .block.group:hover {
+            transform: translateY(-6px) !important;
+        }
+
+        /* GLightbox tweaks */
+        .gslide .gvideo iframe, .gslide .gvideo video {
+            border-radius: 0.75rem;
+        }
+
+        /* Ensure hero typed subtitle stands out */
+        #typed-subtitle {
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        /* Small responsive tweaks */
+        @media (max-width: 768px) {
+            #hero-section { height: 60vh; }
+        }
+
+        /* -------------------------- */
+        /* Corner decorative elements */
+        /* -------------------------- */
+        .corner-deco {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            opacity: 0;
+            transform: translate3d(0,0,0);
+            z-index: 2;
+            filter: blur(0.4px);
+        }
+        .corner-deco.tl { top: -140px; left: -140px; background: linear-gradient(135deg,#7c3aed33,#06b6d433); animation: deco-in-tl 900ms ease-out 200ms forwards; }
+        .corner-deco.tr { top: -140px; right: -140px; background: linear-gradient(225deg,#06b6d433,#7c3aed33); animation: deco-in-tr 1000ms ease-out 250ms forwards; }
+        .corner-deco.bl { bottom: -140px; left: -140px; background: linear-gradient(45deg,#06b6d433,#60a5fa33); animation: deco-in-bl 1100ms ease-out 300ms forwards; }
+        .corner-deco.br { bottom: -140px; right: -140px; background: linear-gradient(315deg,#f9731633,#7c3aed33); animation: deco-in-br 1200ms ease-out 350ms forwards; }
+
+        @keyframes deco-in-tl { to { transform: translate(40px,40px) rotate(6deg); opacity: 1; } }
+        @keyframes deco-in-tr { to { transform: translate(-40px,40px) rotate(-6deg); opacity: 1; } }
+        @keyframes deco-in-bl { to { transform: translate(40px,-40px) rotate(-6deg); opacity: 1; } }
+        @keyframes deco-in-br { to { transform: translate(-40px,-40px) rotate(6deg); opacity: 1; } }
+
+        /* Hero decorative images (appear on load/scroll) */
+        .hero-img {
+            position: absolute;
+            width: 110px;
+            height: auto;
+            opacity: 0;
+            /* start centered */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.72) rotate(0deg);
+            transition: top 650ms cubic-bezier(.2,.9,.2,1), left 650ms cubic-bezier(.2,.9,.2,1), transform 650ms cubic-bezier(.2,.9,.2,1), opacity 420ms ease;
+            z-index: 3;
+            pointer-events: none;
+            filter: drop-shadow(0 12px 30px rgba(16,24,40,0.12));
+        }
+        /* Final positions (move to corners) - used when AOS adds .aos-animate or when JS adds .hero-init */
+        .hero-img.aos-animate,
+        .hero-img.hero-init {
+            opacity: 1;
+            transform: translate(0,0) scale(1);
+        }
+        .hero-img.hero-img-tl.aos-animate,
+        .hero-img.hero-img-tl.hero-init { top: 2.25rem; left: 2.25rem; transform: translate(0,0) rotate(-8deg) scale(1); }
+        .hero-img.hero-img-tr.aos-animate,
+        .hero-img.hero-img-tr.hero-init { top: 2.25rem; right: 2.25rem; left: auto; transform: translate(0,0) rotate(6deg) scale(1); }
+        .hero-img.hero-img-bl.aos-animate,
+        .hero-img.hero-img-bl.hero-init { bottom: 2.25rem; left: 2.25rem; top: auto; transform: translate(0,0) rotate(6deg) scale(1); }
+        .hero-img.hero-img-br.aos-animate,
+        .hero-img.hero-img-br.hero-init { bottom: 2.25rem; right: 2.25rem; top: auto; left: auto; transform: translate(0,0) rotate(-6deg) scale(1); }
+
+        /* Slightly larger images on wider screens */
+        @media (min-width: 1024px) {
+            .hero-img { width: 140px; }
+        }

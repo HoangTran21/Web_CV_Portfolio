@@ -8,7 +8,16 @@
     <!-- Tải Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <!-- Tải biểu tượng Lucide Icons --><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://unpkg.com/glightbox/dist/css/glightbox.min.css" />
     <link rel="stylesheet" href="styles.css">
+    <!-- Effects libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+    <script src="https://unpkg.com/glightbox/dist/js/glightbox.min.js" defer></script>
     <script src="scripts.js" defer></script>
 </head>
 <body class="scroll-smooth">
@@ -36,18 +45,30 @@
     <!-- 1. Phần Giới Thiệu (Hero Section) -->
     <section id="hero-section">
         <div id="hero-overlay" 
-            class="text-center"
+            class="text-center relative"
             style="background-image: url('VTL_img/1-bg.png'); 
                     background-size: cover; 
                     background-position: center;">
             
-                <div id="hero-content" class="p-6 rounded-xl bg-black bg-opacity-30">
+                <!-- Decorative corner gradients (subtle) -->
+                <div class="corner-deco tl" aria-hidden="true"></div>
+                <div class="corner-deco tr" aria-hidden="true"></div>
+                <div class="corner-deco bl" aria-hidden="true"></div>
+                <div class="corner-deco br" aria-hidden="true"></div>
+
+                <!-- Four decorative hero images that appear on load and when hero scrolls into view -->
+                <img src="VTL_img/1.png" alt="hero decor 1" class="hero-img hero-img-tl" data-aos="fade-down-left" data-aos-delay="250" />
+                <img src="VTL_img/2.png" alt="hero decor 2" class="hero-img hero-img-tr" data-aos="fade-down-right" data-aos-delay="350" />
+                <img src="VTL_img/3.png" alt="hero decor 3" class="hero-img hero-img-bl" data-aos="fade-up-left" data-aos-delay="450" />
+                <img src="VTL_img/4.png" alt="hero decor 4" class="hero-img hero-img-br" data-aos="fade-up-right" data-aos-delay="550" />
+
+                <div id="hero-content" class="p-6 rounded-xl bg-black bg-opacity-30 relative z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
                     VU TRA LY
                 </h1>
 
                 <p class="mt-2 text-xl md:text-2xl font-light text-indigo-300">
-                    International Communication Student | DAV
+                    <span id="typed-subtitle">International Communication Student | DAV</span>
                 </p>
 
                 <div class="mt-6">
@@ -63,7 +84,7 @@
     </section>
 
 <!-- 2. Phần Giới Thiệu Bản Thân (About Me) -->
-<section id="about" class="content-section bg-white">
+<section id="about" class="content-section bg-white" data-aos="fade-up" data-aos-duration="800">
     <div class="mx-auto max-w-7xl px-4">
 
         <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">
@@ -216,7 +237,7 @@
                     <div class="grid md:grid-cols-2 gap-6 items-stretch">  
                         <div class="info-box bg-white p-6 pb-8 rounded-xl shadow-md"> 
                             <span class="section-heading-sm bg-yellow-300">Languages</span>
-                            <ul class="list-none space-y-4 text-gray-700 mt-3 flex-grow text-lg">
+                            <ul class="list-none space-y-4 text-gray-700 mt-3 flex-grow text-base">
                                 <li class="flex justify-between items-center">
                                     <span>Vietnamese: <span class="text-indigo-800 font-semibold">Native</span></span>
                                     <img src="VTL_img/flags/vietnam.png" class="w-12 h-8 object-cover border border-gray-300">
@@ -260,13 +281,13 @@
 </section>
 
     <!-- 4. Phần Kinh Nghiệm & Thành Tựu (Experiences) -->
-    <section id="portfolio" class="content-section bg-white">
+    <section id="portfolio" class="content-section bg-white" data-aos="fade-up" data-aos-duration="900">
         <div class="mx-auto max-w-5xl px-4">
             <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center border-b-4 border-indigo-500 pb-3 inline-block mx-auto">Experiences</h2>
             <div class="grid md:grid-cols-1 gap-10">
                 
                 <!-- Kinh nghiệm 1: THP -->
-                 <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                 <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500" data-aos="fade-up">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-3 text-gray-800">01. Intern - Hai Phong Newspaper - Radio and Television (THP)</h3>
                         <p class="text-sm font-semibold text-indigo-600 mb-4">Role: Intern in Television & Journalism</p>
@@ -309,11 +330,11 @@
                 </div>
 
                 <!-- Kinh nghiệm 2: ELCOM -->
-                 <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                 <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500" data-aos="fade-up">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-3 text-gray-800">02. Communications Intern - ELCOM CORPORATION</h3>
-                        <p class="text-sm font-semibold text-indigo-600 mb-4">Vai trò: Thực tập sinh Truyền thông Nội bộ & Sự kiện</p>
-                        <p class="text-gray-600 mb-4">Chịu trách nhiệm sản xuất nội dung đa kênh, quản lý truyền thông nội bộ và dẫn dắt các sự kiện quan trọng của công ty.</p>
+                        <p class="text-sm font-semibold text-indigo-600 mb-4">Role: Communications Intern</p>
+                        <p class="text-gray-600 mb-4">Responsible for multi-channel content production, internal communication management, and leading key company events.</p>
                         
                         <!-- Image Carousel Container cho ELCOM -->
                         <div id="elcom-carousel-container" class="image-carousel-container">
@@ -367,7 +388,7 @@
                 </div>
                 
                     <!-- Kinh nghiệm 3: Các kinh nghiệm khác -->
-                    <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500">
+                    <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500" data-aos="fade-up">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-3 text-gray-800">03. Other Experiences</h3>
                             <p class="text-sm font-semibold text-indigo-600 mb-6">Extracurricular Activities & Community Project Leadership</p>
@@ -533,7 +554,7 @@
                 <br>
                 <br>
                 <!-- 04. Mẫu Sản Phẩm (Work Sample - Video/Content) -->
-                <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500 p-6" id="worksample">
+                <div class="card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition duration-300 border hover:border-indigo-500 p-6" id="worksample" data-aos="fade-up">
                     <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">04. Work Sample (Video/Content)</h3>
                     <p class="text-sm font-semibold text-indigo-600 mb-6">Notable works during work and study</p>
                     
@@ -873,15 +894,10 @@
 
                                 <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
                                     <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
-                                        <iframe 
-                                            class="w-full h-full object-cover" 
-                                            src="https://www.youtube.com/embed/yjPBqGJeVOg?si=RTfl7c5qNxTAUmlg&autoplay=0" 
-                                            title="YouTube video player" 
-                                            frameborder="0" 
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                            referrerpolicy="strict-origin-when-cross-origin" 
-                                            allowfullscreen>
-                                        </iframe>
+                                        <img src="VTL_img/24.png" alt="Video thumbnail" class="w-full h-full object-cover">
+                                        <button class="video-overlay absolute inset-0 flex items-center justify-center text-white text-3xl" data-video-src="https://www.youtube.com/watch?v=yjPBqGJeVOg" aria-label="Play video">
+                                            <svg class="w-16 h-16 bg-indigo-600 rounded-full p-3 shadow-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8l6 4-6 4V8z" fill="white"/></svg>
+                                        </button>
                                     </div>
                                     <div class="p-4 flex flex-col flex-1">
                                         <p class="font-bold text-indigo-600 truncate">Quá trình vận dụng Tư tưởng Hồ Chí Minh vào ngoại giao Việt Nam</p>
@@ -892,12 +908,10 @@
 
                                 <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
                                     <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
-                                        <iframe
-                                        class="w-full h-full object-cover"
-                                        src="https://www.youtube.com/embed/vLEzbb1CAQU?si=d7O8CxzedeR78p1I" 
-                                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                                        </iframe>
+                                        <img src="VTL_img/25.png" alt="Video thumbnail" class="w-full h-full object-cover">
+                                        <button class="video-overlay absolute inset-0 flex items-center justify-center text-white text-3xl" data-video-src="https://www.youtube.com/watch?v=yjPBqGJeVOg" aria-label="Play video">
+                                            <svg class="w-16 h-16 bg-indigo-600 rounded-full p-3 shadow-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8l6 4-6 4V8z" fill="white"/></svg>
+                                        </button>
                                     </div>
                                     <div class="p-4 flex flex-col flex-1">
                                         <p class="font-bold text-indigo-600 truncate">Phóng sự làm bánh mì tại Ukraine</p>
@@ -908,12 +922,10 @@
 
                                 <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
                                     <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
-                                        <iframe
-                                        class="w-full h-full object-cover"
-                                        src="https://www.youtube.com/embed/utCjB0RbmRc?si=14Oygvq1AXEAndza" 
-                                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                                        </iframe>
+                                        <img src="VTL_img/26.png" alt="Video thumbnail" class="w-full h-full object-cover">
+                                        <button class="video-overlay absolute inset-0 flex items-center justify-center text-white text-3xl" data-video-src="https://www.youtube.com/watch?v=yjPBqGJeVOg" aria-label="Play video">
+                                            <svg class="w-16 h-16 bg-indigo-600 rounded-full p-3 shadow-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8l6 4-6 4V8z" fill="white"/></svg>
+                                        </button>
                                     </div>
                                     <div class="p-4 flex flex-col flex-1">
                                         <p class="font-bold text-indigo-600 truncate">Phóng sự “Hà Nội buổi ban mai”</p>
@@ -922,21 +934,7 @@
                                     </div>
                                 </div>
 
-                                <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
-                                    <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
-                                        <iframe
-                                        class="w-full h-full object-cover"
-                                        src="https://www.youtube.com/embed/utCjB0RbmRc?si=14Oygvq1AXEAndza"
-                                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                    <div class="p-4 flex flex-col flex-1">
-                                        <p class="font-bold text-indigo-600 truncate">Phóng sự “Hà Nội buổi ban mai”</p>
-                                        <p class="text-xs text-gray-500 mb-2">Role: Scripting, filming, source selection, full video editing</p>
-                                        <p class="text-sm text-gray-700 flex-1">Description: A class reportage assignment portraying early-morning life in Hanoi.</p>
-                                    </div>
-                                </div>
+                                <!-- (Duplicate entry removed for clarity; keep the above three or add more as needed) -->
                             </div>
                         </div>
                     </div>
