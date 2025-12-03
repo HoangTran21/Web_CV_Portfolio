@@ -13,9 +13,9 @@
                         try {
                             new Typed('#typed-subtitle', {
                                 strings: ['International Communication Student | DAV', 'Storyteller • Videographer • Writer', 'Field Reporter • Content Producer'],
-                                typeSpeed: 70,
-                                backSpeed: 40,
-                                backDelay: 2200,
+                                typeSpeed: 50,
+                                backSpeed: 20,
+                                backDelay: 1800,
                                 loop: true,
                                 smartBackspace: true,
                                 showCursor: true
@@ -152,8 +152,8 @@
             renderCarousel('elcom');
 
             // Start autoplay for both carousels
-            startCarouselAutoplay('thp', 4500);
-            startCarouselAutoplay('elcom', 4500);
+            startCarouselAutoplay('thp', 3000);
+            startCarouselAutoplay('elcom', 3000);
 
             // Khởi tạo lại icons sau khi nội dung động được thêm vào
             lucide.createIcons();
