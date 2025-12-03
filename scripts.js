@@ -224,64 +224,185 @@
         });
 
         // Hàm thiết lập logic Carousel cho từng mục của Other experiences
+        // Implements a smooth continuous left-scrolling carousel (no jumpy slide changes)
         function setupCarousel(id) {
             const track = document.getElementById(`track-${id}`);
             const nextBtn = document.getElementById(`next-${id}`);
             const prevBtn = document.getElementById(`prev-${id}`);
+            const container = track ? track.parentElement : null;
+            if (!track || !container) return;
 
-            // THAY ĐỔI: Màu nút Next/Prev mặc định (ví dụ: indigo cho 3a, green cho 3b)
-            const activeColorClass = id === '3a' ? 'bg-indigo-500' : 'bg-green-500';
-            const activeHoverColorClass = id === '3a' ? 'hover:bg-indigo-700' : 'hover:bg-green-700';
+            // Ensure track uses flex layout for horizontal flow
+            track.style.display = 'flex';
+            track.style.flexWrap = 'nowrap';
+            track.style.willChange = 'transform';
 
-            const imagesPerView = 4;
-            const totalImages = track.children.length;
-            // Tính số bước trượt cần thiết để xem hết ảnh
-            const maxSlideIndex = Math.ceil(totalImages / imagesPerView) - 1; 
-
-            let currentSlide = 0;
-
-            function updateCarousel() {
-                // Mỗi lần trượt dịch chuyển 100% của khu vực hiển thị
-                const offset = currentSlide * 100;
-                track.style.transform = `translateX(-${offset}%)`;
-
-                // Cập nhật trạng thái nút Prev
-                if (currentSlide === 0) {
-                    prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                    prevBtn.classList.remove(activeColorClass, 'bg-opacity-90', activeHoverColorClass);
-                } else {
-                    prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                    prevBtn.classList.add(activeColorClass, 'bg-opacity-90', activeHoverColorClass);
-                }
-
-                // Cập nhật trạng thái nút Next
-                if (currentSlide >= maxSlideIndex) {
-                    nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                    nextBtn.classList.remove(activeColorClass, 'bg-opacity-90', activeHoverColorClass);
-                } else {
-                    nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                    nextBtn.classList.add(activeColorClass, 'bg-opacity-90', activeHoverColorClass);
-                }
+            // Duplicate content once to create a seamless loop
+            if (!track.dataset.duplicated) {
+                const html = track.innerHTML;
+                track.innerHTML = html + html;
+                track.dataset.duplicated = 'true';
             }
 
-            // Xử lý nút NEXT
-            nextBtn.addEventListener('click', () => {
-                if (currentSlide < maxSlideIndex) {
-                    currentSlide++;
-                    updateCarousel();
+            // Calculate widths used for looping
+            function getSingleWidth() {
+                return track.scrollWidth / 2;
+            }
+
+            let singleWidth = getSingleWidth();
+            let pos = 0; // transform X in px (negative moves left)
+            let lastTime = performance.now();
+            let running = true;
+
+            // Speed in pixels per second (desktop faster, mobile slower).
+            // Increased further per user request — still readable but noticeably faster.
+            function getSpeed() {
+                return window.innerWidth < 768 ? 36 : 80; // mobile / desktop
+            }
+
+            function step(now) {
+                const dt = (now - lastTime) / 1000;
+                lastTime = now;
+                if (running) {
+                    pos -= getSpeed() * dt;
+                    // loop when we've scrolled past one copy
+                    if (-pos >= singleWidth) pos += singleWidth;
+                    track.style.transform = `translateX(${pos}px)`;
                 }
+                requestAnimationFrame(step);
+            }
+
+            // Hover should not pause or change the carousel speed — keep motion constant
+            // (Removed previous pause/resume handlers to ensure hover does not affect running state)
+
+            // If left/right buttons exist for this Other Experiences carousel, remove them
+            // (user requested removing the arrows)
+            if (id && id.toString().startsWith('3')) {
+                if (nextBtn && nextBtn.parentNode) nextBtn.parentNode.removeChild(nextBtn);
+                if (prevBtn && prevBtn.parentNode) prevBtn.parentNode.removeChild(prevBtn);
+            }
+
+            // Click-to-zoom for images inside the track: enlarge to center moderately
+            function openImageZoom(src, alt) {
+                // Create overlay container
+                const overlay = document.createElement('div');
+                overlay.className = 'image-zoom-overlay';
+                overlay.tabIndex = -1;
+
+                const img = document.createElement('img');
+                img.alt = alt || '';
+
+                const caption = document.createElement('div');
+                caption.className = 'image-zoom-caption';
+                caption.textContent = alt || '';
+
+                // Pause scrolling while zoomed
+                const prevRunning = running;
+                running = false;
+
+                function close() {
+                    if (!overlay) return;
+                    overlay.classList.add('hidden');
+                    setTimeout(() => {
+                        if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+                        running = prevRunning;
+                    }, 220);
+                    window.removeEventListener('keydown', onKey);
+                }
+
+                function onKey(e) {
+                    if (e.key === 'Escape') close();
+                }
+
+                overlay.addEventListener('click', close);
+                window.addEventListener('keydown', onKey);
+
+                // Append overlay early (shows backdrop) but set image hidden until loaded
+                img.style.opacity = '0';
+                img.style.transform = 'scale(0.98)';
+                img.style.transition = 'transform 320ms cubic-bezier(.2,.9,.2,1), opacity 220ms ease';
+                overlay.appendChild(img);
+                overlay.appendChild(caption);
+                document.body.appendChild(overlay);
+
+                // Preload to measure natural size
+                const pre = new Image();
+                pre.onload = function () {
+                    const naturalW = pre.naturalWidth || pre.width;
+                    const naturalH = pre.naturalHeight || pre.height;
+
+                    // Desired multiplier: between 3 and 4x. Use midpoint 3.5x for a strong, readable zoom.
+                    const multiplier = 3.5;
+
+                    // Compute desired dimensions but clamp to viewport with small margin
+                    const maxVW = Math.max(window.innerWidth * 0.98, 200);
+                    const maxVH = Math.max(window.innerHeight * 0.98, 200);
+
+                    let desiredW = naturalW * multiplier;
+                    let desiredH = naturalH * multiplier;
+
+                    // If desired exceeds viewport, scale down while preserving aspect ratio
+                    const widthRatio = maxVW / desiredW;
+                    const heightRatio = maxVH / desiredH;
+                    const clampRatio = Math.min(1, widthRatio, heightRatio);
+                    desiredW = Math.round(desiredW * clampRatio);
+                    desiredH = Math.round(desiredH * clampRatio);
+
+                    // Apply src and explicit dimensions to the image for crisp rendering
+                    img.src = src;
+                    img.style.width = desiredW + 'px';
+                    img.style.height = desiredH + 'px';
+                    img.style.maxWidth = '98vw';
+                    img.style.maxHeight = '98vh';
+
+                    // Reveal with a smooth scale and fade
+                    requestAnimationFrame(() => {
+                        img.style.opacity = '1';
+                        img.style.transform = 'scale(1)';
+                    });
+                };
+
+                pre.onerror = function () {
+                    // Fallback: show the image anyway
+                    img.src = src;
+                    img.style.opacity = '1';
+                    img.style.transform = 'scale(1)';
+                };
+
+                // Start loading
+                pre.src = src;
+            }
+
+            // Attach click handlers to images inside track
+            Array.from(track.querySelectorAll('img')).forEach(imgEl => {
+                imgEl.style.cursor = 'zoom-in';
+                imgEl.addEventListener('click', (e) => {
+                    const src = imgEl.dataset.large || imgEl.src;
+                    openImageZoom(src, imgEl.alt || '');
+                });
             });
 
-            // Xử lý nút PREV
-            prevBtn.addEventListener('click', () => {
-                if (currentSlide > 0) {
-                    currentSlide--;
-                    updateCarousel();
-                }
+            // Optional next/prev manual control: jump by container width
+            const viewWidth = container.clientWidth;
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                pos -= viewWidth;
+                if (-pos >= singleWidth) pos += singleWidth;
+                track.style.transform = `translateX(${pos}px)`;
+            });
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                pos += viewWidth;
+                if (pos > 0) pos -= singleWidth;
+                track.style.transform = `translateX(${pos}px)`;
             });
 
-            // Khởi tạo trạng thái
-            updateCarousel();
+            // Recalculate widths on resize
+            window.addEventListener('resize', () => {
+                singleWidth = getSingleWidth();
+            });
+
+            // Kick off animation loop
+            lastTime = performance.now();
+            requestAnimationFrame(step);
         }
 
         // Chạy logic Carousel khi DOM đã load
