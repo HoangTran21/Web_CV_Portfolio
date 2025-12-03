@@ -255,9 +255,9 @@
             let running = true;
 
             // Speed in pixels per second (desktop faster, mobile slower).
-            // Increased further per user request — still readable but noticeably faster.
+            // Increased slightly per user request for a livelier auto-scroll.
             function getSpeed() {
-                return window.innerWidth < 768 ? 36 : 80; // mobile / desktop
+                return window.innerWidth < 768 ? 48 : 110; // mobile / desktop
             }
 
             function step(now) {
@@ -275,12 +275,8 @@
             // Hover should not pause or change the carousel speed — keep motion constant
             // (Removed previous pause/resume handlers to ensure hover does not affect running state)
 
-            // If left/right buttons exist for this Other Experiences carousel, remove them
-            // (user requested removing the arrows)
-            if (id && id.toString().startsWith('3')) {
-                if (nextBtn && nextBtn.parentNode) nextBtn.parentNode.removeChild(nextBtn);
-                if (prevBtn && prevBtn.parentNode) prevBtn.parentNode.removeChild(prevBtn);
-            }
+            // Keep left/right buttons (if present) and wire them to jump by one item.
+            // This lets users step to the previous/next image in the continuous track.
 
             // Click-to-zoom for images inside the track: enlarge to center moderately
             function openImageZoom(src, alt) {
@@ -382,17 +378,97 @@
                 });
             });
 
-            // Optional next/prev manual control: jump by container width
-            const viewWidth = container.clientWidth;
-            if (nextBtn) nextBtn.addEventListener('click', () => {
-                pos -= viewWidth;
+            // Manual control: jump by one item width (previous / next)
+            const firstItem = track.querySelector('.flex-shrink-0');
+            const itemWidth = firstItem ? Math.round(firstItem.getBoundingClientRect().width) : Math.round(container.clientWidth / 4);
+
+
+            // Pause-on-manual and resume after timeout logic
+            let resumeTimer = null;
+            const RESUME_DELAY = 5000; // ms
+
+            // Number of original items before duplication
+            const totalChildren = track.children.length;
+            const originalCount = track.dataset.duplicated ? Math.floor(totalChildren / 2) : totalChildren;
+
+            // Track a manual index when user steps via buttons (0 .. originalCount-1)
+            let manualIndex = null;
+
+            function scheduleResume() {
+                if (resumeTimer) clearTimeout(resumeTimer);
+                resumeTimer = setTimeout(() => {
+                    running = true;
+                    resumeTimer = null;
+                    // reset timing reference so movement continues smoothly
+                    lastTime = performance.now();
+                    // re-enable nav buttons when autoplay resumes
+                    if (nextBtn) {
+                        nextBtn.disabled = false;
+                        nextBtn.classList.remove('opacity-50','cursor-not-allowed');
+                    }
+                    if (prevBtn) {
+                        prevBtn.disabled = false;
+                        prevBtn.classList.remove('opacity-50','cursor-not-allowed');
+                    }
+                }, RESUME_DELAY);
+            }
+
+            function computeManualIndexFromPos() {
+                // visible offset into the first copy (0 .. singleWidth)
+                const visibleOffset = ((-pos % singleWidth) + singleWidth) % singleWidth;
+                const idx = Math.round(visibleOffset / itemWidth);
+                return Math.min(Math.max(idx, 0), Math.max(0, originalCount - 1));
+            }
+
+            function updateNavDisabledState() {
+                if (!nextBtn || !prevBtn) return;
+                nextBtn.disabled = manualIndex >= (originalCount - 1);
+                prevBtn.disabled = manualIndex <= 0;
+                nextBtn.classList.toggle('opacity-50', nextBtn.disabled);
+                nextBtn.classList.toggle('cursor-not-allowed', nextBtn.disabled);
+                prevBtn.classList.toggle('opacity-50', prevBtn.disabled);
+                prevBtn.classList.toggle('cursor-not-allowed', prevBtn.disabled);
+            }
+
+            function onManualStep(delta) {
+                // Stop automatic motion while user is interacting
+                running = false;
+                if (resumeTimer) clearTimeout(resumeTimer);
+
+                // Initialize manualIndex based on current scroll position if needed
+                if (manualIndex === null) manualIndex = computeManualIndexFromPos();
+
+                // delta is in pixels; convert to index step
+                const step = Math.round(Math.abs(delta) / itemWidth);
+                if (delta < 0) {
+                    manualIndex = Math.min(originalCount - 1, manualIndex + step);
+                } else {
+                    manualIndex = Math.max(0, manualIndex - step);
+                }
+
+                // Compute target pos for the chosen index (use first copy)
+                pos = -manualIndex * itemWidth;
+                // normalize pos into the duplicated track range
                 if (-pos >= singleWidth) pos += singleWidth;
-                track.style.transform = `translateX(${pos}px)`;
-            });
-            if (prevBtn) prevBtn.addEventListener('click', () => {
-                pos += viewWidth;
                 if (pos > 0) pos -= singleWidth;
+
                 track.style.transform = `translateX(${pos}px)`;
+
+                // update button disabled state according to edges
+                updateNavDisabledState();
+
+                // Schedule auto-resume after inactivity
+                scheduleResume();
+            }
+
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                // move left by one item (negative)
+                onManualStep(-itemWidth);
+            });
+
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                // move right by one item (positive)
+                onManualStep(itemWidth);
             });
 
             // Recalculate widths on resize
