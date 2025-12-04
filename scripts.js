@@ -489,3 +489,53 @@
             // Khởi tạo cho mục 3b (Head of Communication & HR Lead)
             setupCarousel('3b'); 
         });
+
+        // Count-up animations (fast, start from 1, keep '+' outside the span)
+(function () {
+    function animateCount(el, target, duration) {
+        const start = 1;
+        const change = target - start;
+        const startTime = performance.now();
+
+        function step(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+            const current = Math.floor(start + change * eased);
+            el.textContent = String(current);
+
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = String(target);
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    function initCountUps() {
+        const nodes = document.querySelectorAll('.count-up');
+        if (!nodes.length) return;
+
+        const obs = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = Math.max(0, parseInt(el.dataset.target, 10) || 0);
+                const duration = Math.min(1500, Math.max(1000, Math.round(500 + target * 20)));
+                el.textContent = '1';
+                animateCount(el, target, duration);
+                observer.unobserve(el);
+            });
+        }, { threshold: 0.5 });
+
+        nodes.forEach(n => {
+            n.textContent = '1';
+            obs.observe(n);
+        });
+    }
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(initCountUps, 1000);
+    } else {
+        window.addEventListener('load', initCountUps);
+    }
+})();
