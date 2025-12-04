@@ -325,7 +325,7 @@
         .hero-img.hero-img-br.hero-init { bottom: 2.25rem; right: 2.25rem; top: auto; left: auto; transform: translate(0,0) rotate(-6deg) scale(1); }
 
         @media (min-width: 1024px) {
-            .hero-img { width: 140px; }
+            .hero-img { width: 200px; }
         }
 
         .image-zoom-overlay {
