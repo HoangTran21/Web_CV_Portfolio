@@ -525,7 +525,7 @@
                 animateCount(el, target, duration);
                 observer.unobserve(el);
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 1 });
 
         nodes.forEach(n => {
             n.textContent = '1';
