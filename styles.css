@@ -1,22 +1,17 @@
-        /* Thiết lập font Inter */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7fafc; /* Màu nền nhẹ nhàng */
+            background-color: #f7fafc;
         }
-        /* Style tùy chỉnh cho hiệu ứng Parallax */
         #hero-section {
-            /* Hình ảnh nền chuyên nghiệp, mang tính quốc tế */
             background-image: url('https://images.unsplash.com/photo-1543269865-c3359d9c8efb?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1920&h=1080&blend=6366f1&blend-mode=multiply&sat=-20&bri=-30');
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Chiều cao đầy đủ cho phần đầu trang */
+            height: 100vh;
             position: relative;
             overflow: hidden;
         }
 
-        /* Lớp phủ để làm nổi bật văn bản */
         #hero-overlay {
-            /* Lớp phủ màu Indigo đậm hơn, tăng tính chuyên nghiệp */
             background-color: rgba(0, 0, 0, 0.65);
             position: absolute;
             top: 0;
@@ -28,7 +23,6 @@
             justify-content: center;
         }
 
-        /* Container cho nội dung chính */
         .content-section {
             padding-top: 5rem;
             padding-bottom: 5rem;
@@ -39,40 +33,33 @@
             max-width: 1280px;
         }
 
-        /* Hiệu ứng mượt mà cho các phần tử */
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
-            /* Màu sắc hover theo tông Indigo */
             box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
         }
 
-        /* Nút cuộn lên đầu */
         #back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 1000;
-            display: none; /* Ban đầu ẩn */
+            display: none;
         }
 
-        /* ------------------------------------------- */
-        /* Custom style cho Image Carousel (Slider) */
-        /* ------------------------------------------- */
         .image-carousel-container {
             position: relative;
-            max-width: 600px; /* Chiều rộng tối đa cho carousel (có thể điều chỉnh) */
-            margin: 1.5rem auto; /* Căn giữa */
+            max-width: 600px;
+            margin: 1.5rem auto;
             border-radius: 0.75rem;
             overflow: hidden;
-            background-color: #eef2ff; /* indigo-50 */
+            background-color: #eef2ff;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            height: 300px; /* Chiều cao tổng: ảnh + cap */
+            height: 300px;
         }
         
-        /* Container chứa tất cả các slide - dùng để positioning */
         .carousel-slides {
             position: relative;
             width: 100%;
@@ -85,11 +72,11 @@
             left: 0;
             width: 100%;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out; /* Hiệu ứng mờ dần */
+            transition: opacity 0.5s ease-in-out;
         }
 
         .carousel-slide.active {
-            opacity: 1; /* Slide đang active sẽ hiển thị */
+            opacity: 1;
             z-index: 5;
         }
 
@@ -112,19 +99,19 @@
             left: 0;
             width: 100%;
             padding: 0.75rem 1rem;
-            background-color: #4f46e5; /* indigo-600 */
+            background-color: #4f46e5;
             color: white;
             font-size: 1rem;
             font-weight: 500;
             text-align: center;
-            z-index: 10; /* Đảm bảo caption nằm trên ảnh */
+            z-index: 10;
             transition: opacity 0.5s ease-in-out;
         }
 
         .carousel-nav-button {
             position: absolute;
             top: 50%;
-            transform: translateY(calc(-50% - 30px)); /* Điều chỉnh để nằm giữa ảnh, -30px là 1 nửa chiều cao caption */
+            transform: translateY(calc(-50% - 30px));
             background-color: rgba(255, 255, 255, 0.9);
             border: none;
             cursor: pointer;
@@ -136,7 +123,7 @@
         }
 
         .carousel-nav-button:hover {
-            background-color: #6366f1; /* indigo-500 */
+            background-color: #6366f1;
             color: white;
             transform: translateY(calc(-50% - 30px)) scale(1.05);
         }
@@ -149,11 +136,6 @@
             right: 10px;
         }
         
-        /* ------------------------------------------- */
-        /* Custom style cho phần About/Skills mới */
-        /* ------------------------------------------- */
-
-        /* Bối cảnh tổng thể cho phần giới thiệu (About) */
         #about-content {
             background-color: #f7fafc; 
             border-radius: 1.5rem;
@@ -161,25 +143,23 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
         }
 
-        /* Card ID Badge */
         .id-badge {
-            background-color: #e0e7ff; /* indigo-100 */
+            background-color: #e0e7ff;
             border-radius: 1.5rem;
             padding: 2rem;
             position: relative;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         .id-badge-header {
-            background-color: #4f46e5; /* indigo-600 */
+            background-color: #4f46e5;
             border-radius: 0.75rem 0.75rem 0 0;
             padding: 0.75rem;
             color: white;
             text-align: center;
             font-weight: 700;
-            margin: -2rem -2rem 1.5rem -2rem; /* Kéo ra ngoài padding */
+            margin: -2rem -2rem 1.5rem -2rem;
         }
 
-        /* Phần thông tin */
         .info-box {
             background-color: #ffffff;
             border-radius: 0.5rem;
@@ -188,46 +168,39 @@
             margin-top: 1rem;
         }
 
-        /* Icon styling */
         .skill-icon {
             filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
         }
 
-        /* Typography cho phần tiêu đề nhỏ */
         .section-heading-sm {
             display: inline-block;
-            background-color: #fcd34d; /* Màu vàng nhạt */
+            background-color: #fcd34d;
             padding: 0.25rem 1rem;
             border-radius: 9999px;
             font-weight: 700;
-            color: #475569; /* Xám đậm */
+            color: #475569;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 1rem;
         }
         
-        /* Typography cho các tiêu đề kinh nghiệm bổ sung */
         .experience-tag {
             display: inline-block;
-            background-color: #d1fae5; /* green-100 */
-            color: #065f46; /* green-900 */
+            background-color: #d1fae5;
+            color: #065f46;
             font-weight: 600;
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
-            font-size: 0.875rem; /* text-sm */
+            font-size: 0.875rem;
             margin-bottom: 0.5rem;
         }
-        /* CSS bổ sung cho các ảnh thẻ của phần Other Experiences */
             .experience-tag {
                 @apply px-2 py-0.5 text-xs font-semibold rounded-md;
             }
             .experience-tag:not(.bg-indigo-100):not(.bg-green-100) {
-                /* Thiết lập màu mặc định cho tag 3b nếu cần */
                 @apply bg-green-100 text-green-900;
             }
-        /* ----------------------- */
-        /* Video overlay / play UI */
-        /* ----------------------- */
+
         .video-overlay {
             background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.25));
             transition: transform 0.18s ease, opacity 0.18s ease;
@@ -240,41 +213,33 @@
             filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25));
         }
 
-        /* Subtle card hover lift for thumbnails */
         .block.group {
             transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s ease;
         }
-        /* Only a subtle lift (no scaling) to avoid enlarging whole sections */
         .block.group:hover {
             transform: translateY(-6px);
             box-shadow: 0 18px 40px rgba(16,24,40,0.08);
         }
 
-        /* Disable scale transforms for blocks inside these major sections to be safe
-           (overrides inline Tailwind hover:scale classes) */
         #portfolio .block.group:hover,
         #worksample .block.group:hover,
         #about .block.group:hover {
             transform: translateY(-6px) !important;
         }
 
-        /* GLightbox tweaks */
         .gslide .gvideo iframe, .gslide .gvideo video {
             border-radius: 0.75rem;
         }
 
-        /* Ensure hero typed subtitle stands out */
         #typed-subtitle {
             font-weight: 500;
             letter-spacing: 0.01em;
         }
 
-        /* Small responsive tweaks */
         @media (max-width: 768px) {
             #hero-section { height: 60vh; }
         }
 
-        /* Tablet adjustments (<= 1024px) */
         @media (max-width: 1024px) {
             .image-carousel-container { height: 260px; }
             .hero-img { width: 100px; }
@@ -285,18 +250,15 @@
             .content-section { padding-top: 3rem; padding-bottom: 3rem; }
         }
 
-        /* Mobile adjustments (<= 640px) */
         @media (max-width: 640px) {
             .image-carousel-container { height: 220px; }
             .hero-img { width: 80px; }
             .carousel-caption { font-size: 0.85rem; padding: 0.5rem 0.75rem; }
 
-            /* Make carousel items wider on small screens so each item is readable */
             [id^="track-"] .flex-shrink-0 {
                 width: 50% !important;
             }
 
-            /* Ensure nav buttons are tappable on mobile */
             .carousel-nav-button {
                 padding: 0.85rem;
                 min-width: 44px;
@@ -307,20 +269,14 @@
             .carousel-nav-button.prev { left: 8px; }
             .carousel-nav-button.next { right: 8px; }
 
-            /* ID card becomes more compact on mobile */
             .id-badge { padding: 1rem; border-radius: 1rem; }
             .id-badge img { width: 110px; height: 110px; margin-top: -40px; }
 
-            /* Reduce global section padding for better vertical fit */
             .content-section { padding-top: 2rem; padding-bottom: 2rem; }
 
-            /* Hide large decorative hero images to reduce clutter on small screens */
             .hero-img { display: none; }
         }
 
-        /* -------------------------- */
-        /* Corner decorative elements */
-        /* -------------------------- */
         .corner-deco {
             position: absolute;
             width: 120px;
@@ -341,13 +297,11 @@
         @keyframes deco-in-bl { to { transform: translate(40px,-40px) rotate(-6deg); opacity: 1; } }
         @keyframes deco-in-br { to { transform: translate(-40px,-40px) rotate(6deg); opacity: 1; } }
 
-        /* Hero decorative images (appear on load/scroll) */
         .hero-img {
             position: absolute;
             width: 110px;
             height: auto;
             opacity: 0;
-            /* start centered */
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0.72) rotate(0deg);
@@ -356,7 +310,6 @@
             pointer-events: none;
             filter: drop-shadow(0 12px 30px rgba(16,24,40,0.12));
         }
-        /* Final positions (move to corners) - used when AOS adds .aos-animate or when JS adds .hero-init */
         .hero-img.aos-animate,
         .hero-img.hero-init {
             opacity: 1;
@@ -371,12 +324,10 @@
         .hero-img.hero-img-br.aos-animate,
         .hero-img.hero-img-br.hero-init { bottom: 2.25rem; right: 2.25rem; top: auto; left: auto; transform: translate(0,0) rotate(-6deg) scale(1); }
 
-        /* Slightly larger images on wider screens */
         @media (min-width: 1024px) {
             .hero-img { width: 140px; }
         }
 
-        /* Image zoom overlay for Other Experiences */
         .image-zoom-overlay {
             position: fixed;
             inset: 0;
@@ -390,15 +341,14 @@
         }
         .image-zoom-overlay.hidden { opacity: 0; pointer-events: none; }
         .image-zoom-overlay img {
-                            /* allow an even larger zoom while keeping a safe edge margin */
-                            max-width: 98vw;
-                            max-height: 98vh;
-                            border-radius: 12px;
-                            box-shadow: 0 50px 140px rgba(2,6,23,0.75);
-                            transform-origin: center center;
-                            transition: transform 320ms cubic-bezier(.2,.9,.2,1), opacity 220ms ease;
-                            will-change: transform, opacity;
-                        }
+            max-width: 98vw;
+            max-height: 98vh;
+            border-radius: 12px;
+            box-shadow: 0 50px 140px rgba(2,6,23,0.75);
+            transform-origin: center center;
+            transition: transform 320ms cubic-bezier(.2,.9,.2,1), opacity 220ms ease;
+            will-change: transform, opacity;
+            }
         .image-zoom-caption {
             position: absolute;
             bottom: 6vh;

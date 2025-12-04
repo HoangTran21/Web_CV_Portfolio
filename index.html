@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="VTL_img/favicon.png">
     <title>Portfolio Tra Ly Vu</title>
-    <!-- Tải Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <!-- Tải biểu tượng Lucide Icons --><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-    <!-- GLightbox -->
     <link rel="stylesheet" href="https://unpkg.com/glightbox/dist/css/glightbox.min.css" />
     <link rel="stylesheet" href="styles.css">
-    <!-- Effects libraries -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
@@ -104,6 +101,7 @@
                     <div class="flex flex-col items-center py-6 px-4">
                         <img src="VTL_img/1.png" 
                              alt="Ảnh Chân Dung" 
+                             loading="lazy"
                              class="rounded-xl w-44 h-44 object-cover border-4 border-white shadow-xl -mt-12 mb-4">
 
                         <h3 class="text-2xl font-bold text-gray-900">TRA LY VU</h3>
@@ -145,6 +143,7 @@
                             <div class="flex-shrink-0 w-14 h-12 flex items-center justify-center">
                                 <img src="VTL_img/dav_logo.png" 
                                     alt="DAV Logo" 
+                                    loading="lazy"
                                     class="w-full h-full object-contain">
                             </div>
                         </div>
@@ -160,6 +159,7 @@
                             <div class="flex-shrink-0 w-14 h-12 flex items-center justify-center">
                                 <img src="VTL_img/tp_logo.png" 
                                     alt="Tran Phu Logo" 
+                                    loading="lazy"
                                     class="w-full h-full object-contain">
                             </div>
                         </div>
@@ -240,15 +240,15 @@
                             <ul class="list-none space-y-4 text-gray-700 mt-3 flex-grow text-base">
                                 <li class="flex justify-between items-center">
                                     <span>Vietnamese: <span class="text-indigo-800 font-semibold">Native</span></span>
-                                    <img src="VTL_img/flags/vietnam.png" class="w-12 h-8 object-cover border border-gray-300">
+                                    <img src="VTL_img/flags/vietnam.png" loading="lazy" class="w-12 h-8 object-cover border border-gray-300">
                                 </li>
                                 <li class="flex justify-between items-center">
                                     <span>English: <span class="text-indigo-800 font-semibold">Fluent</span></span>
-                                    <img src="VTL_img/flags/uk.png" class="w-12 h-8 object-cover border border-gray-300">
+                                    <img src="VTL_img/flags/uk.png" loading="lazy" class="w-12 h-8 object-cover border border-gray-300">
                                 </li>
                                 <li class="flex justify-between items-center">
                                     <span>Chinese: <span class="text-indigo-800 font-semibold">Basic</span></span>
-                                    <img src="VTL_img/flags/china.png" class="w-12 h-8 object-cover border border-gray-300">
+                                    <img src="VTL_img/flags/china.png" loading="lazy" class="w-12 h-8 object-cover border border-gray-300">
                                 </li>
                             </ul>
                         </div>
@@ -257,19 +257,16 @@
 
                             <div class="grid grid-cols-2 gap-3 mt-3"> 
                                 <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm h-16">
-                                    <img src="VTL_img/tools/capcut.png" class="w-12 h-12 object-contain">
+                                    <img src="VTL_img/tools/capcut.png" loading="lazy" class="w-12 h-12 object-contain">
                                 </div>
-                                
                                 <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm h-16">
-                                    <img src="VTL_img/tools/canva.png" class="w-12 h-12 object-contain">
+                                    <img src="VTL_img/tools/canva.png" loading="lazy" class="w-12 h-12 object-contain">
                                 </div>
-                                
                                 <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm h-16">
-                                    <img src="VTL_img/tools/pr.png" class="w-12 h-12 object-contain">
+                                    <img src="VTL_img/tools/pr.png" loading="lazy" class="w-12 h-12 object-contain">
                                 </div>
-                                
                                 <div class="w-full aspect-square flex items-center justify-center bg-gray-50 rounded-lg shadow-sm h-16">
-                                    <img src="VTL_img/tools/office365.png" class="w-12 h-12 object-contain">
+                                    <img src="VTL_img/tools/office365.png" loading="lazy" class="w-12 h-12 object-contain">
                                 </div>
                             </div>
                         </div>
@@ -418,33 +415,30 @@
                                         <div id="carousel-3a" class="relative">
                                             <div class="overflow-hidden rounded-lg shadow-inner">
                                                 <div id="track-3a" class="flex transition-transform duration-500 ease-in-out" style="transform: translateX(0%);">
-                                                    
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3a Image 1" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3a Image 1" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/gene.png" alt="Experience 3a Image 2" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/gene.png" alt="Experience 3a Image 2" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/1.png" alt="Experience 3a Image 3" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/1.png" alt="Experience 3a Image 3" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/cauchuyenvanhoa.png" alt="Experience 3a Image 4" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/cauchuyenvanhoa.png" alt="Experience 3a Image 4" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/khieuvu.png" alt="Experience 3a Image 5" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/khieuvu.png" alt="Experience 3a Image 5" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/3.png" alt="Experience 3a Image 6" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/3.png" alt="Experience 3a Image 6" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/4.png" alt="Experience 3a Image 7" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/4.png" alt="Experience 3a Image 7" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/5.png" alt="Experience 3a Image 8" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/5.png" alt="Experience 3a Image 8" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
-                                                    
-                                                </div>
                                             </div>
                                             
                                             <button id="prev-3a" class="absolute left-0 top-1/2 -translate-y-1/2 bg-indigo-500 bg-opacity-90 text-white p-2 rounded-full shadow-lg hover:bg-indigo-700 transition z-10">
@@ -461,7 +455,8 @@
                                         </div>
                                     </div>
                                     </div>
-                                
+                                <br>
+                                <br>
                                 <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-green-500">
                                     <div class="flex flex-wrap gap-2 mb-2">
                                         <span class="experience-tag">Event Organization</span>
@@ -498,33 +493,30 @@
                                         <div id="carousel-3b" class="relative">
                                             <div class="overflow-hidden rounded-lg shadow-inner">
                                                 <div id="track-3b" class="flex transition-transform duration-500 ease-in-out" style="transform: translateX(0%);">
-                                                    
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 1" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 1" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 2" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 2" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 3" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 3" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 4" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 4" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 5" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 5" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 6" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 6" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 7" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 7" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
                                                     <div class="flex-shrink-0 w-1/4 p-1">
-                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 8" class="w-full h-full object-cover rounded-md aspect-[3/2]">
+                                                        <img src="VTL_img/other_exp/csdh.png" alt="Experience 3b Image 8" loading="lazy" class="w-full h-full object-cover rounded-md aspect-[3/2]">
                                                     </div>
-                                                    
-                                                </div>
                                             </div>
                                             
                                             <button id="prev-3b" class="absolute left-0 top-1/2 -translate-y-1/2 bg-green-500 bg-opacity-90 text-white p-2 rounded-full shadow-lg hover:bg-green-700 transition z-10">
@@ -566,6 +558,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/bg-template.png" 
                                             alt="Thumbnail Đến Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
@@ -594,6 +587,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/khieuvu.png"
                                             alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
@@ -621,6 +615,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/22.png" 
                                             alt="Quốc tế Thiếu nhi 1/6 tại Elcom cỡ này"
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
@@ -648,6 +643,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/23.png" 
                                             alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
@@ -674,6 +670,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/gene.png" 
                                             alt="Quốc tế Thiếu nhi 1/6 tại Elcom cỡ này"
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
@@ -701,6 +698,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/trungthu.png" 
                                             alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-white opacity-80 group-hover:opacity-100"><path d="M7 6v12l10-6z"/></svg>
@@ -734,6 +732,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/18.png" 
                                             alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                         </div>
@@ -759,6 +758,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/19.png" 
                                             alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                         </div>
@@ -784,6 +784,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/20.png" 
                                             alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                         </div>
@@ -809,6 +810,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/cauchuyenvanhoa.png" 
                                             alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                         </div>
@@ -834,6 +836,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/21.png" 
                                             alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                         </div>
@@ -859,6 +862,7 @@
                                     <div class="relative overflow-hidden aspect-[16/9]">
                                         <img src="VTL_img/Nghean.png" 
                                             alt="Thumbnail Đền Hải Phòng, đi lòng vòng: Đền Nghè" 
+                                            loading="lazy"
                                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
                                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10 transition duration-300">
                                         </div>
@@ -888,7 +892,7 @@
 
                                 <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
                                     <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
-                                        <img src="VTL_img/24.png" alt="Video thumbnail" class="w-full h-full object-cover">
+                                        <img src="VTL_img/24.png" alt="Video thumbnail" loading="lazy" class="w-full h-full object-cover">
                                         <button class="video-overlay absolute inset-0 flex items-center justify-center text-white text-3xl" data-video-src="https://www.youtube.com/watch?v=yjPBqGJeVOg" aria-label="Play video">
                                             <svg class="w-16 h-16 bg-indigo-600 rounded-full p-3 shadow-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8l6 4-6 4V8z" fill="white"/></svg>
                                         </button>
@@ -902,7 +906,7 @@
 
                                 <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
                                     <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
-                                        <img src="VTL_img/25.png" alt="Video thumbnail" class="w-full h-full object-cover">
+                                        <img src="VTL_img/25.png" alt="Video thumbnail" loading="lazy" class="w-full h-full object-cover">
                                         <button class="video-overlay absolute inset-0 flex items-center justify-center text-white text-3xl" data-video-src="https://www.youtube.com/watch?v=yjPBqGJeVOg" aria-label="Play video">
                                             <svg class="w-16 h-16 bg-indigo-600 rounded-full p-3 shadow-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8l6 4-6 4V8z" fill="white"/></svg>
                                         </button>
@@ -916,7 +920,7 @@
 
                                 <div class="block group shadow-lg rounded-xl overflow-hidden bg-white h-full hover:shadow-xl relative">
                                     <div class="relative overflow-hidden aspect-[16/9] bg-black p-1 rounded-lg">
-                                        <img src="VTL_img/26.png" alt="Video thumbnail" class="w-full h-full object-cover">
+                                        <img src="VTL_img/26.png" alt="Video thumbnail" loading="lazy" class="w-full h-full object-cover">
                                         <button class="video-overlay absolute inset-0 flex items-center justify-center text-white text-3xl" data-video-src="https://www.youtube.com/watch?v=yjPBqGJeVOg" aria-label="Play video">
                                             <svg class="w-16 h-16 bg-indigo-600 rounded-full p-3 shadow-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8l6 4-6 4V8z" fill="white"/></svg>
                                         </button>
