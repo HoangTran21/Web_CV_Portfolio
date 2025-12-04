@@ -274,6 +274,50 @@
             #hero-section { height: 60vh; }
         }
 
+        /* Tablet adjustments (<= 1024px) */
+        @media (max-width: 1024px) {
+            .image-carousel-container { height: 260px; }
+            .hero-img { width: 100px; }
+            .carousel-caption { font-size: 0.95rem; }
+            .carousel-nav-button { padding: 0.6rem; }
+            .id-badge { padding: 1.25rem; }
+            .id-badge img { width: 130px; height: 130px; margin-top: -44px; }
+            .content-section { padding-top: 3rem; padding-bottom: 3rem; }
+        }
+
+        /* Mobile adjustments (<= 640px) */
+        @media (max-width: 640px) {
+            .image-carousel-container { height: 220px; }
+            .hero-img { width: 80px; }
+            .carousel-caption { font-size: 0.85rem; padding: 0.5rem 0.75rem; }
+
+            /* Make carousel items wider on small screens so each item is readable */
+            [id^="track-"] .flex-shrink-0 {
+                width: 50% !important;
+            }
+
+            /* Ensure nav buttons are tappable on mobile */
+            .carousel-nav-button {
+                padding: 0.85rem;
+                min-width: 44px;
+                min-height: 44px;
+                touch-action: manipulation;
+            }
+
+            .carousel-nav-button.prev { left: 8px; }
+            .carousel-nav-button.next { right: 8px; }
+
+            /* ID card becomes more compact on mobile */
+            .id-badge { padding: 1rem; border-radius: 1rem; }
+            .id-badge img { width: 110px; height: 110px; margin-top: -40px; }
+
+            /* Reduce global section padding for better vertical fit */
+            .content-section { padding-top: 2rem; padding-bottom: 2rem; }
+
+            /* Hide large decorative hero images to reduce clutter on small screens */
+            .hero-img { display: none; }
+        }
+
         /* -------------------------- */
         /* Corner decorative elements */
         /* -------------------------- */
