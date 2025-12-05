@@ -1,6 +1,10 @@
 lucide.createIcons();
 
 function initializeEffects() {
+    document.querySelectorAll('.hero-img').forEach(img => {
+        img.classList.add('hero-init');
+    });
+
     if (window.AOS) {
         AOS.init({ once: true, duration: 700, easing: 'ease-out-quart', offset: 120 });
     }
